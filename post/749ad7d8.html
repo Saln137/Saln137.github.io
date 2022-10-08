@@ -1,0 +1,945 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/slan.jpg">
+  <link rel="icon" href="/img/slan.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Liu Bo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="12console  1.Docker中文件挂载启动命令1.1挂载方式1—-数据卷挂载12345docker run \  --name nginx \  -v html:&#x2F;root&#x2F;html \  -p 8081:80\  nginx   123456# 查看html数据卷的位置docker volume inspect html# 进入该目录cd &#x2F;var&#x2F;lib&#x2F;docker&#x2F;volumes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker常用命令">
+<meta property="og:url" content="http://slanris.top/post/749ad7d8.html">
+<meta property="og:site_name" content="liubo-Blog">
+<meta property="og:description" content="12console  1.Docker中文件挂载启动命令1.1挂载方式1—-数据卷挂载12345docker run \  --name nginx \  -v html:&#x2F;root&#x2F;html \  -p 8081:80\  nginx   123456# 查看html数据卷的位置docker volume inspect html# 进入该目录cd &#x2F;var&#x2F;lib&#x2F;docker&#x2F;volumes">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://th.bing.com/th/id/OIP.ovKcH9h3yTrNnMSldGHdJgHaD4?w=285&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+<meta property="article:published_time" content="2022-10-08T13:58:22.000Z">
+<meta property="article:modified_time" content="2022-10-08T14:31:24.112Z">
+<meta property="article:author" content="Liu Bo">
+<meta property="article:tag" content="软件">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://th.bing.com/th/id/OIP.ovKcH9h3yTrNnMSldGHdJgHaD4?w=285&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+  
+  
+  
+     <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> 
+  
+  <title>docker常用命令 - liubo-Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/toubudaziji.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"slanris.top","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Slan&#39;Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/github/">
+                <i class="iconfont icon-github-fill"></i>
+                仓库
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/layout/contact.ejs/">
+                <i class="iconfont icon-link-fill"></i>
+                留言
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://w.wallhaven.cc/full/v9/wallhaven-v97223.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="docker常用命令"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Liu Bo
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-10-08 21:58" pubdate>
+          2022年10月8日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          47 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">docker常用命令</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2022年10月8日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs arcade"><span class="hljs-built_in">console</span><br><br></code></pre></td></tr></table></figure>
+
+<h1 id="1-Docker中文件挂载启动命令"><a href="#1-Docker中文件挂载启动命令" class="headerlink" title="1.Docker中文件挂载启动命令"></a>1.Docker中文件挂载启动命令</h1><h2 id="1-1挂载方式1—-数据卷挂载"><a href="#1-1挂载方式1—-数据卷挂载" class="headerlink" title="1.1挂载方式1—-数据卷挂载"></a>1.1挂载方式1—-数据卷挂载</h2><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs livescript">docker run <span class="hljs-string">\</span><br>  --name nginx <span class="hljs-string">\</span><br>  -v html:/root/html <span class="hljs-string">\</span><br>  -p <span class="hljs-number">8081</span>:<span class="hljs-number">80</span><span class="hljs-string">\</span><br>  nginx <br></code></pre></td></tr></table></figure>
+
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment"># 查看html数据卷的位置</span><br>docker volume inspect html<br><span class="hljs-comment"># 进入该目录</span><br>cd <span class="hljs-regexp">/var/</span>lib<span class="hljs-regexp">/docker/</span>volumes<span class="hljs-regexp">/html/</span>_data<br><span class="hljs-comment"># 修改文件</span><br>vim index.html<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-2挂载方式2—-目录直接挂载"><a href="#1-2挂载方式2—-目录直接挂载" class="headerlink" title="1.2挂载方式2—-目录直接挂载"></a>1.2挂载方式2—-目录直接挂载</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs awk">docker run\<br>	--name mysql\<br>    -e MYSQL_ROOT_PASSWORD=root\<br>    -p <span class="hljs-number">33061</span>:<span class="hljs-number">3306</span>\<br>    -v <span class="hljs-regexp">/tmp/my</span>sql<span class="hljs-regexp">/conf/</span>hmy.cnf:<span class="hljs-regexp">/etc/my</span>sql<span class="hljs-regexp">/conf.d/</span>hmy.cnf\<br>    -v <span class="hljs-regexp">/tmp/my</span>sql<span class="hljs-regexp">/data:/</span>var<span class="hljs-regexp">/lib/my</span>sql\<br>    -d mysql<br></code></pre></td></tr></table></figure>
+
+<h1 id="2-自定义Docker镜像"><a href="#2-自定义Docker镜像" class="headerlink" title="2.自定义Docker镜像"></a>2.自定义Docker镜像</h1><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">docker build -<span class="hljs-keyword">tag</span> <span class="hljs-title">镜像名称:版本 .(.代表dockerfile</span>所在的目录) 名称必须是小写，不然会报以下错误<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">docker</span> build -t javawebdemo:<span class="hljs-number">1</span>.<span class="hljs-number">0</span> .<br></code></pre></td></tr></table></figure>
+
+<p><u><strong>invalid argument “javawebDemo:1.0” for “-t, –tag” flag: invalid reference format: repository name must be lowercase</u></strong></p>
+<p><strong><u>无效参数“javawebDemo:1.0”的“-t，——tag”标志:无效的引用格式:存储库名称必须是小写的</strong></u></p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs applescript">运行：<br>docker <span class="hljs-built_in">run</span> <span class="hljs-comment">--name web -p 8090:8090 -d javawebdemo:1.0</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="3-DockerCompose安装"><a href="#3-DockerCompose安装" class="headerlink" title="3.DockerCompose安装"></a>3.DockerCompose安装</h1><h2 id="3-1-下载"><a href="#3-1-下载" class="headerlink" title="3.1.下载"></a>3.1.下载</h2><p>Linux下需要通过命令下载：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 安装</span><br>curl -L https://github.com/docker/compose/releases/download/1.23.1/docker-compose-`<span class="hljs-built_in">uname</span> -s`-`<span class="hljs-built_in">uname</span> -m` &gt; /usr/local/bin/docker-compose<br></code></pre></td></tr></table></figure>
+
+<p>如果下载速度较慢，或者下载失败，可以使用课前资料提供的docker-compose文件：</p>
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210082209501.png" srcset="/img/loading.gif" lazyload alt="image-20210417133020614"></p>
+<p>上传到<code>/usr/local/bin/</code>目录也可以。</p>
+<h2 id="3-2-修改文件权限"><a href="#3-2-修改文件权限" class="headerlink" title="3.2.修改文件权限"></a>3.2.修改文件权限</h2><p>修改文件权限：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 修改权限</span><br><span class="hljs-built_in">chmod</span> +x /usr/local/bin/docker-compose<br></code></pre></td></tr></table></figure>
+
+<h2 id="3-3-Base自动补全命令"><a href="#3-3-Base自动补全命令" class="headerlink" title="3.3.Base自动补全命令"></a>3.3.Base自动补全命令</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 补全命令</span><br>curl -L https://raw.githubusercontent.com/docker/compose/1.29.1/contrib/completion/bash/docker-compose &gt; /etc/bash_completion.d/docker-compose<br></code></pre></td></tr></table></figure>
+
+<p>如果这里出现错误，需要修改自己的hosts文件：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;199.232.68.133 raw.githubusercontent.com&quot;</span> &gt;&gt; /etc/hosts<br></code></pre></td></tr></table></figure>
+
+<h2 id="3-4-部署集群项目"><a href="#3-4-部署集群项目" class="headerlink" title="3.4.部署集群项目"></a>3.4.部署集群项目</h2><p>进入项目目录，然后运行下面的命令：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">docker-compose up -d</span><br></code></pre></td></tr></table></figure>
+
+<p>撤销部署：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">docker-compose down -d</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="4-Docker中项目部署常用命令"><a href="#4-Docker中项目部署常用命令" class="headerlink" title="4.Docker中项目部署常用命令"></a>4.Docker中项目部署常用命令</h1><ul>
+<li><p>docker run：创建并运行一个容器，处于运行状态</p>
+</li>
+<li><p>docker pause：让一个运行的容器暂停</p>
+</li>
+<li><p>docker unpause：让一个容器从暂停状态恢复运行</p>
+</li>
+<li><p>docker stop：停止一个运行的容器</p>
+</li>
+<li><p>docker start：让一个停止的容器再次运行</p>
+</li>
+<li><p>docker rm：删除一个容器</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker <span class="hljs-built_in">exec</span> -it mn bash<br></code></pre></td></tr></table></figure>
+
+<p>命令解读：</p>
+<ul>
+<li><p>docker exec ：进入容器内部，执行一个命令</p>
+</li>
+<li><p>-it : 给当前进入的容器创建一个标准输入、输出终端，允许我们与容器交互</p>
+</li>
+<li><p>mn ：要进入的容器的名称</p>
+</li>
+<li><p>bash：进入容器后执行的命令，bash是一个linux终端交互命令</p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="5-Docker镜像仓库"><a href="#5-Docker镜像仓库" class="headerlink" title="5.Docker镜像仓库"></a>5.Docker镜像仓库</h1><p>搭建镜像仓库可以基于Docker官方提供的DockerRegistry来实现。</p>
+<p>官网地址：<a target="_blank" rel="noopener" href="https://hub.docker.com/_/registry">https://hub.docker.com/_/registry</a></p>
+<h2 id="5-1-简化版镜像仓库"><a href="#5-1-简化版镜像仓库" class="headerlink" title="5.1.简化版镜像仓库"></a>5.1.简化版镜像仓库</h2><p>Docker官方的Docker Registry是一个基础版本的Docker镜像仓库，具备仓库管理的完整功能，但是没有图形化界面。</p>
+<p>搭建方式比较简单，命令如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker run -d \<br>    --restart=always \<br>    --name registry	\<br>    -p 5000:5000 \<br>    -v registry-data:/var/lib/registry \<br>    registry<br></code></pre></td></tr></table></figure>
+
+<p>命令中挂载了一个数据卷registry-data到容器内的/var/lib/registry 目录，这是私有镜像库存放数据的目录。</p>
+<p>访问<a target="_blank" rel="noopener" href="http://yourip:5000/v2/_catalog">http://YourIp:5000/v2/_catalog</a> 可以查看当前私有镜像服务中包含的镜像</p>
+<h2 id="5-2-带有图形化界面版本"><a href="#5-2-带有图形化界面版本" class="headerlink" title="5.2.带有图形化界面版本"></a>5.2.带有图形化界面版本</h2><p>使用DockerCompose部署带有图象界面的DockerRegistry，命令如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">&#x27;3.0&#x27;</span><br><span class="hljs-attr">services:</span><br>  <span class="hljs-attr">registry:</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">registry</span><br>    <span class="hljs-attr">volumes:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">./registry-data:/var/lib/registry</span><br>  <span class="hljs-attr">ui:</span><br>    <span class="hljs-attr">image:</span> <span class="hljs-string">joxit/docker-registry-ui:static</span><br>    <span class="hljs-attr">ports:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-number">8080</span><span class="hljs-string">:80</span><br>    <span class="hljs-attr">environment:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">REGISTRY_TITLE=传智教育私有仓库</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">REGISTRY_URL=http://registry:5000</span><br>    <span class="hljs-attr">depends_on:</span><br>      <span class="hljs-bullet">-</span> <span class="hljs-string">registry</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="5-3-配置Docker信任地址"><a href="#5-3-配置Docker信任地址" class="headerlink" title="5.3.配置Docker信任地址"></a>5.3.配置Docker信任地址</h2><p>我们的私服采用的是http协议，默认不被Docker信任，所以需要做一个配置：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 打开要修改的文件</span><br>vi /etc/docker/daemon.json<br><span class="hljs-comment"># 添加内容：</span><br><span class="hljs-string">&quot;insecure-registries&quot;</span>:[<span class="hljs-string">&quot;http://110.40.220.94:8088&quot;</span>]<br><span class="hljs-comment"># 重加载</span><br>systemctl daemon-reload<br><span class="hljs-comment"># 重启docker</span><br>systemctl restart docker<br></code></pre></td></tr></table></figure>
+
+<h2 id="5-4-推送、拉取镜像"><a href="#5-4-推送、拉取镜像" class="headerlink" title="5.4.推送、拉取镜像"></a>5.4.推送、拉取镜像</h2><p>推送镜像到私有镜像服务必须先tag，步骤如下：</p>
+<p>① 重新tag本地镜像，名称前缀为私有仓库的地址：192.168.150.101:8080/</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker tag nginx:latest 110.40.220.94:8088/nginx:1.0 <br></code></pre></td></tr></table></figure>
+
+<p>② 推送镜像</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker push 110.40.220.94:8088/nginx:1.0 <br></code></pre></td></tr></table></figure>
+
+<p>③ 拉取镜像</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker pull 110.40.220.94:8088/nginx:1.0 <br></code></pre></td></tr></table></figure>
+
+<h1 id="6-RabbitMQ"><a href="#6-RabbitMQ" class="headerlink" title="6.RabbitMQ"></a>6.RabbitMQ</h1><p><strong>版本需要使用management版本 的，不然没有管理界面</strong></p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs livescript">docker run <span class="hljs-string">\</span><br> -e RABBITMQ_DEFAULT_USER=root <span class="hljs-string">\</span><br> -e RABBITMQ_DEFAULT_PASS=root <span class="hljs-string">\</span><br> --name rabbitmq <span class="hljs-string">\</span><br> --hostname my-rabbit <span class="hljs-string">\</span><br> -p <span class="hljs-number">15672</span>:<span class="hljs-number">15672</span> <span class="hljs-string">\</span><br> -p <span class="hljs-number">5672</span>:<span class="hljs-number">5672</span> <span class="hljs-string">\</span><br> -d <span class="hljs-string">\</span><br> rabbitmq:management<br></code></pre></td></tr></table></figure>
+
+<h1 id="7-ElasticSearch"><a href="#7-ElasticSearch" class="headerlink" title="7.ElasticSearch"></a>7.ElasticSearch</h1><h2 id="7-1运行es"><a href="#7-1运行es" class="headerlink" title="7.1运行es"></a>7.1运行es</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs awk">docker run -d \<br>--name es \<br>    -e <span class="hljs-string">&quot;ES_JAVA_OPTS=-Xms512m -Xmx512m&quot;</span> \<br>    -e <span class="hljs-string">&quot;discovery.type=single-node&quot;</span> \<br>    -e <span class="hljs-string">&quot;http.host=0.0.0.0&quot;</span> \<br>    -v es-data:<span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/elasticsearch/</span>data \<br>    -v es-plugins:<span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/elasticsearch/</span>plugins \<br>    -v es-logs:<span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/elasticsearch/</span>logs \<br>    --privileged \<br>    --network es-net \<br>    -p <span class="hljs-number">9200</span>:<span class="hljs-number">9200</span> \<br>    elasticsearch:<span class="hljs-number">8.4</span>.<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<p>命令解释：</p>
+<ul>
+<li><code>-e &quot;cluster.name=es-docker-cluster&quot;</code>：设置集群名称</li>
+<li><code>-e &quot;http.host=0.0.0.0&quot;</code>：监听的地址，可以外网访问</li>
+<li><code>-e &quot;ES_JAVA_OPTS=-Xms512m -Xmx512m&quot;</code>：内存大小</li>
+<li><code>-e &quot;discovery.type=single-node&quot;</code>：非集群模式</li>
+<li><code>-v es-data:/usr/share/elasticsearch/data</code>：挂载逻辑卷，绑定es的数据目录</li>
+<li><code>-v es-logs:/usr/share/elasticsearch/logs</code>：挂载逻辑卷，绑定es的日志目录</li>
+<li><code>-v es-plugins:/usr/share/elasticsearch/plugins</code>：挂载逻辑卷，绑定es的插件目录</li>
+<li><code>--privileged</code>：授予逻辑卷访问权</li>
+<li><code>--network es-net</code> ：加入一个名为es-net的网络中</li>
+<li><code>-p 9200:9200</code>：端口映射配置</li>
+</ul>
+<h2 id="7-2部署kibana"><a href="#7-2部署kibana" class="headerlink" title="7.2部署kibana"></a>7.2部署kibana</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs routeros">docker <span class="hljs-built_in">run</span> -d \<br>--name kibana \<br>-e <span class="hljs-attribute">ELASTICSEARCH_HOSTS</span>=http://172.18.0.2:9200 \<br><span class="hljs-attribute">--network</span>=es-net \<br>-p 5601:5601  \<br>kibana:8.4.1<br></code></pre></td></tr></table></figure>
+
+<p>控制台不能连接9200的解决办法：</p>
+<ul>
+<li><p>进入ES容器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">exec</span> -it elasticsearch /bin/bash<br></code></pre></td></tr></table></figure></li>
+<li><p>查看ip（docker内部局域网的ip）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cat</span> /etc/hosts<br></code></pre></td></tr></table></figure>
+
+<p>我们将看到下面的内容：<br><img src="https://img-blog.csdnimg.cn/20200925134424472.png#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
+<p>我们可以知道es容器在docker中的ip是<code>172.17.0.3</code></p>
+</li>
+<li><p>接下来就可以根据这个ip来创建容器啦</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">docker <span class="hljs-built_in">run</span> -it -d -e <span class="hljs-attribute">ELASTICSEARCH_URL</span>=http://172.17.0.3:9200 --name kibana -p 5601:5601 kibana<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="7-3离线安装ik插件（推荐）"><a href="#7-3离线安装ik插件（推荐）" class="headerlink" title="7.3离线安装ik插件（推荐）"></a>7.3离线安装ik插件（推荐）</h2><h3 id="1）查看数据卷目录"><a href="#1）查看数据卷目录" class="headerlink" title="1）查看数据卷目录"></a>1）查看数据卷目录</h3><p>安装插件需要知道elasticsearch的plugins目录位置，而我们用了数据卷挂载，因此需要查看elasticsearch的数据卷目录，通过下面命令查看:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">docker volume inspect es-plugins<br></code></pre></td></tr></table></figure>
+
+<p>显示结果：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">[</span><br>    <span class="hljs-punctuation">&#123;</span><br>        <span class="hljs-attr">&quot;CreatedAt&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2022-05-06T10:06:34+08:00&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;Driver&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;local&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;Labels&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;Mountpoint&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/var/lib/docker/volumes/es-plugins/_data&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;Name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;es-plugins&quot;</span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;Options&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-literal"><span class="hljs-keyword">null</span></span><span class="hljs-punctuation">,</span><br>        <span class="hljs-attr">&quot;Scope&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;local&quot;</span><br>    <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">]</span><br></code></pre></td></tr></table></figure>
+
+<p>说明plugins目录被挂载到了：<code>/var/lib/docker/volumes/es-plugins/_data </code>这个目录中。</p>
+<h3 id="2）解压缩分词器安装包"><a href="#2）解压缩分词器安装包" class="headerlink" title="2）解压缩分词器安装包"></a>2）解压缩分词器安装包</h3><p>下面我们需要把课前资料中的ik分词器解压缩，重命名为ik</p>
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210082210463.png" srcset="/img/loading.gif" lazyload alt="image-20210506110249144"></p>
+<h3 id="3）上传到es容器的插件数据卷中"><a href="#3）上传到es容器的插件数据卷中" class="headerlink" title="3）上传到es容器的插件数据卷中"></a>3）上传到es容器的插件数据卷中</h3><p>也就是<code>/var/lib/docker/volumes/es-plugins/_data </code>：</p>
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210082210064.png" srcset="/img/loading.gif" lazyload alt="image-20210506110704293"></p>
+<h3 id="4）重启容器"><a href="#4）重启容器" class="headerlink" title="4）重启容器"></a>4）重启容器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">4、重启容器</span><br>docker restart es<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 查看es日志</span><br>docker logs -f es<br></code></pre></td></tr></table></figure>
+
+<h3 id="5）测试："><a href="#5）测试：" class="headerlink" title="5）测试："></a>5）测试：</h3><p>IK分词器包含两种模式：</p>
+<ul>
+<li><p><code>ik_smart</code>：最少切分</p>
+</li>
+<li><p><code>ik_max_word</code>：最细切分</p>
+</li>
+</ul>
+<h2 id="7-4问题解决-—-gt-分词器没有挂在到plugins目录下"><a href="#7-4问题解决-—-gt-分词器没有挂在到plugins目录下" class="headerlink" title="7.4问题解决 —-&gt;分词器没有挂在到plugins目录下"></a>7.4问题解决 —-&gt;分词器没有挂在到plugins目录下</h2><p>\5. 进入<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=docker&spm=1001.2101.3001.7020">docker</a> 安装elasticSearch 的容器 查看plugins</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">exec</span> -it elasticsearch /bin/bash<br><span class="hljs-built_in">cd</span> plugins <br></code></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20201114111732680.png#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>6.查看当前的路径</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">pwd</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20201114111914484.png#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>7.回到解压ik<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%88%86%E8%AF%8D&spm=1001.2101.3001.7020">分词</a>器的目录，copy到容器中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">cp</span> ik elasticsearch:/usr/share/elasticsearch/plugins<br>参数说明；elasticsearch docker容器名称<br>		/usr/share/elasticsearch/plugins 容器所在的位置<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20201114112021510.png#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>\8. 查看plugins 是否成功</p>
+<p><img src="https://img-blog.csdnimg.cn/20201114112239518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMDQ5MzEw,size_16,color_FFFFFF,t_70#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>9.重起elasticSearch 容器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker restart elasticseacher<br></code></pre></td></tr></table></figure>
+
+<h3 id="在线安装"><a href="#在线安装" class="headerlink" title="在线安装"></a>在线安装</h3><p>进入容器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">exec</span> -it elasticsearch /bin/bash<br></code></pre></td></tr></table></figure>
+
+<p>在线下载并安装</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crystal">./bin/elasticsearch-plugin install <span class="hljs-symbol">https:</span>/<span class="hljs-regexp">/github.com/medcl</span><span class="hljs-regexp">/elasticsearch-analysis-ik/releases</span><span class="hljs-regexp">/download/v</span>8.<span class="hljs-number">4.1</span>/elasticsearch-analysis-ik-<span class="hljs-number">8.4</span>.<span class="hljs-number">1</span>.zip<br></code></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://img-blog.csdnimg.cn/img_convert/316924125878132d289dc7ea3bf99b70.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>进入plugins可以看到IK分词器已经安装成功</p>
+<p><img src="https://img-blog.csdnimg.cn/img_convert/241af36b392cf1a09e169c5e45b5b600.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="安装拼音分词插件"><a href="#安装拼音分词插件" class="headerlink" title="安装拼音分词插件"></a>安装拼音分词插件</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">.<span class="hljs-regexp">/bin/</span>elasticsearch-plugin install https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/medcl/</span>elasticsearch-analysis-pinyin<span class="hljs-regexp">/releases/</span>download<span class="hljs-regexp">/v8.4.1/</span>elasticsearch-analysis-pinyin-<span class="hljs-number">8.4</span>.<span class="hljs-number">1</span>.zip<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%BD%AF%E4%BB%B6/" class="category-chain-item">软件</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%BD%AF%E4%BB%B6/">#软件</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>docker常用命令</div>
+      <div>http://slanris.top/post/749ad7d8.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Liu Bo</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年10月8日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/post/cb9cca01.html" title="服务器搭建">
+                        <span class="hidden-mobile">服务器搭建</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"4y7YsUgmMYud86eBcuV5xg3U-9Nh9j0Va","appKey":"nSMDtSmkvbVgFPWsKKLDomN3","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":5,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://4y7ysugm.lc-cn-e1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://www.slanris.top" target="_blank" rel="nofollow noopener"><span>Slan</span></a> <i class="iconfont icon-love"></i> <a href="https://www.liu30k.top" target="_blank" rel="nofollow noopener"><span>Liubo</span></a> 
+    </div>
+  
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      鄂ICP证123456号
+    </a>
+  </span>
+  
+</div>
+
+  
+  
+
+  <div>
+    <span id="timeDate">载入天数...</span>
+    <span id="times">载入时分秒...</span>
+    <script>
+    var now = new Date();
+    function createtime(){
+        var grt= new Date("10/01/2022 00:00:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){
+            hnum = "0" + hnum;
+        }
+        minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if(String(mnum).length ==1 ){
+                  mnum = "0" + mnum;
+        }
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if(String(snum).length ==1 ){
+                  snum = "0" + snum;
+        }
+        document.getElementById("timeDate").innerHTML = "🚀 for&nbsp"+dnum+"&nbspdays";  //此次自定义显示内容
+        document.getElementById("times").innerHTML = hnum + "&nbsphr&nbsp" + mnum + "&nbspmin&nbsp" + snum + "&nbspsec";
+    }  //此次自定义显示内容
+    setInterval("createtime()",250);
+    </script>
+  </div>
+
+  <div class="text-center py-1">   
+    <div>
+      <span>Copyright © 2022-2023</span></a>
+      <a href="https://www.liu30k.top/" target="_blank" rel="nofollow noopener">
+       <span>by liubo-slanris</span></a>    <br>
+    </div>
+
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/love.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicRibbon.min.js"></script>
+<script src="/%3Cscript%20async%20src=%22https:/sucai.erhe.group/hexo&erhe/sbhuadong.js%22%3E%3C/script%3E.js"></script>
+<script src="/js/canvas-nest.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/snowflake.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/nico.model.json"},"display":{"position":"left","width":200,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
