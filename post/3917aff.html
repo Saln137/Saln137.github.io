@@ -73,13 +73,15 @@
 <link rel="stylesheet" href="/css/youhua.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/toubudaziji.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<link rel="stylesheet" href="//unpkg.com/@waline/client@v2/dist/waline.css">
+<link rel="stylesheet" href="/css/decorate.css">
 
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"slanris.top","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"slanris.top","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"4y7YsUgmMYud86eBcuV5xg3U-9Nh9j0Va","app_key":"nSMDtSmkvbVgFPWsKKLDomN3","server_url":"https://server.slanris.top","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -89,6 +91,23 @@
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
 
 
   
@@ -183,9 +202,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/playlist/">
-                <i class="iconfont icon-music"></i>
-                音乐
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
               </a>
             </li>
           
@@ -195,9 +214,21 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/layout/contact.ejs/">
-                <i class="iconfont icon-link-fill"></i>
-                留言
+              <a class="nav-link" href="/photos/">
+                <i class="iconfont icon-photos"></i>
+                相册
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/playlist/">
+                <i class="iconfont icon-music"></i>
+                音乐
               </a>
             </li>
           
@@ -275,6 +306,29 @@
     
 
     
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+          <span id="waline-comment-count-container" style="display: none">
+            &nbsp
+            <i class="iconfont icon-comment" aria-hidden="true"></i>
+            <span id="test_id_visitor"></span>
+          </span>
+          
+          <script>
+            path = window.location.pathname
+            console.log(path)
+            video_html_res = "<span id='" + path + "' class='waline-comment-count'></span>&nbsp评论"
+            console.log(video_html_res)
+            document.getElementById("test_id_visitor").innerHTML = video_html_res;
+          </script>
+          
+
+        </span>
+        
+      
     
   </div>
 
@@ -385,6 +439,11 @@
         </div>
       
       
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2022年10月9日</div>
+        </div>
+      
       
         <div class="license-meta-item">
           <div>许可协议</div>
@@ -437,20 +496,26 @@
             
   <article id="comments" lazyload>
     
-  <div id="valine"></div>
+  <div id="waline"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#valine', function() {
-      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.5.1/Valine.min.js', function() {
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.6.3/waline.min.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.6.3/waline.min.js', function() {
         var options = Object.assign(
-          {"appId":"4y7YsUgmMYud86eBcuV5xg3U-9Nh9j0Va","appKey":"nSMDtSmkvbVgFPWsKKLDomN3","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":5,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://4y7ysugm.lc-cn-e1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":true},
+          {"serverURL":"https://hexo.slanris.top/","path":"window.location.pathname","highlighter":true,"meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":6,"pageview":true},
           {
-            el: "#valine",
-            path: window.location.pathname
+            el: '#waline',
+            path: window.location.pathname,
+            serverURL: 'https://hexo.slanris.top/'
           }
         )
-        new Valine(options);
-        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
-          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+        Waline.init(options);
+        wa_ccc = "waline-comment-count-container"
+        var i=document.getElementById(wa_ccc)
+        i.style.display = 'inline'
+
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
           Fluid.plugins.imageCaption(imgSelector);
           Fluid.plugins.fancyBox(imgSelector);
         })
@@ -552,9 +617,34 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://www.slanris.top" target="_blank" rel="nofollow noopener"><span>Slan</span></a> <i class="iconfont icon-love"></i> <a href="https://www.liu30k.top" target="_blank" rel="nofollow noopener"><span>Liubo</span></a> 
+       <a href="https://www.slanris.top" target="_blank" rel="nofollow noopener"><span>Slan</span></a> <i class="iconfont icon-love"></i> <a href="https://www.liu30k.top" target="_blank" rel="nofollow noopener"><span>LiuBo</span></a> 
     </div>
   
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
   
   
     <!-- 备案信息 ICP for China -->
@@ -751,6 +841,8 @@
 
   <script>Fluid.plugins.imageCaption();</script>
 
+  <script defer src="/js/leancloud.js" ></script>
+
   <script  src="/js/local-search.js" ></script>
 
 
@@ -764,6 +856,8 @@
 <script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/snowflake.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
 <script src="//cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script>
+<script src="/js/reping.js"></script>
+<script src="//unpkg.com/@waline/client@v2/dist/waline.js"></script>
 
 
 
