@@ -213,7 +213,7 @@
           
             <li class="nav-item">
               <a class="nav-link" href="/photos/">
-                <i class="iconfont icon-photos"></i>
+                <i class="iconfont icon-instagram-fill"></i>
                 相册
               </a>
             </li>
@@ -511,7 +511,10 @@ style='width:100%;height:100%'></iframe>
 
             
   <article id="comments" lazyload>
-    
+    <!-- 你需要自行修改替换 `v2` 为你想要的版本号 -->
+<script src="https://unpkg.com/@waline/client@v2.13.0/dist/waline.js"></script>
+
+
   <div id="waline"></div>
   <script type="text/javascript">
     Fluid.utils.loadComments('#waline', function() {
@@ -522,10 +525,13 @@ style='width:100%;height:100%'></iframe>
           {
             el: '#waline',
             path: window.location.pathname,
+            reaction: true, // 开启反应
+            comment: true,
             serverURL: 'https://hexo.slanris.top/'
           }
         )
         Waline.init(options);
+        
         wa_ccc = "waline-comment-count-container"
         var i=document.getElementById(wa_ccc)
         i.style.display = 'inline'
@@ -539,6 +545,7 @@ style='width:100%;height:100%'></iframe>
     });
   </script>
   <noscript>Please enable JavaScript to view the comments</noscript>
+
 
 
   </article>
