@@ -1,0 +1,1128 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/slan.jpg">
+  <link rel="icon" href="/img/slan.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Liu Bo">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="常见面试知识点的总结，多看多练多收集多复习，才能掌握！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java面试知识点收集">
+<meta property="og:url" content="http://slanris.top/post/906095e6.html">
+<meta property="og:site_name" content="liubo-Blog">
+<meta property="og:description" content="常见面试知识点的总结，多看多练多收集多复习，才能掌握！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic4.zhimg.com%2Fv2-5f30cbe5a19db2f9c82f8b499e391aed_1200x500.jpg&refer=http%3A%2F%2Fpic4.zhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668366262&t=445540d9ff50755f00dc3cff96cbd13b">
+<meta property="article:published_time" content="2022-10-14T19:02:35.000Z">
+<meta property="article:modified_time" content="2022-10-14T19:05:04.676Z">
+<meta property="article:author" content="Liu Bo">
+<meta property="article:tag" content="面试">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic4.zhimg.com%2Fv2-5f30cbe5a19db2f9c82f8b499e391aed_1200x500.jpg&refer=http%3A%2F%2Fpic4.zhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668366262&t=445540d9ff50755f00dc3cff96cbd13b">
+  
+  
+  
+     <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> 
+  
+  <title>java面试知识点收集 - liubo-Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/youhua.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/toubudaziji.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<link rel="stylesheet" href="//unpkg.com/@waline/client@v2/dist/waline.css">
+<link rel="stylesheet" href="/css/decorate.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"slanris.top","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":60,"backSpeed":100,"cursorChar":"","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"4y7YsUgmMYud86eBcuV5xg3U-9Nh9j0Va","app_key":"nSMDtSmkvbVgFPWsKKLDomN3","server_url":"https://server.slanris.top","path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Slan&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/photos/">
+                <i class="iconfont icon-instagram-fill"></i>
+                相册
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/playlist/">
+                <i class="iconfont icon-music"></i>
+                音乐
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://w.wallhaven.cc/full/v9/wallhaven-v97223.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="java面试知识点收集"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Liu Bo
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-10-15 03:02" pubdate>
+          2022年10月15日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          20k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          170 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="leancloud-page-views"></span> 次
+          <span id="waline-comment-count-container" style="display: none">
+            &nbsp
+            <i class="iconfont icon-comment" aria-hidden="true"></i>
+            <span id="test_id_visitor"></span>
+          </span>
+          
+          <script>
+            path = window.location.pathname
+            console.log(path)
+            video_html_res = "<span id='" + path + "' class='waline-comment-count'></span>&nbsp评论"
+            console.log(video_html_res)
+            document.getElementById("test_id_visitor").innerHTML = video_html_res;
+          </script>
+          
+
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">java面试知识点收集</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2022年10月15日 凌晨
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="1-ConcurrentModificationException"><a href="#1-ConcurrentModificationException" class="headerlink" title="1.ConcurrentModificationException"></a>1.ConcurrentModificationException</h2><p>ConcurrentModificationException(并发修改异常)：迭代器遍历过程中，通过集合对象修改了集合中的元素长度，造成了迭代器获取元素中判断预期修改值和实际修改值不一致</p>
+<p>ConcurrentModificationException是基于java<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E9%9B%86%E5%90%88&spm=1001.2101.3001.7020">集合</a>中的 <strong>快速失败（fail-fast）</strong> 机制产生的，在使用<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E8%BF%AD%E4%BB%A3%E5%99%A8&spm=1001.2101.3001.7020">迭代器</a>遍历一个集合对象时，如果遍历过程中对集合对象的内容进行了增删改，就会抛出该异常。<br>快速失败机制使得java的集合类不能在<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%A4%9A%E7%BA%BF%E7%A8%8B&spm=1001.2101.3001.7020">多线程</a>下并发修改，也不能在迭代过程中被修改。</p>
+<h4 id="1-1抛异常实例"><a href="#1-1抛异常实例" class="headerlink" title="1.1抛异常实例"></a>1.1抛异常实例</h4><p>使用迭代器遍历list，同时使用list.remove方法删除元素，会抛ConcurrentModificationException异常：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">tryRemove</span><span class="hljs-params">(List&lt;String&gt; strings)</span> &#123;<br>    Iterator&lt;String&gt; it = strings.iterator();<br>    <span class="hljs-keyword">while</span>(it.hasNext()) &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> it.next();<br>        <span class="hljs-keyword">if</span>(str.equals(<span class="hljs-string">&quot;remove&quot;</span>)) &#123;<br>            strings.remove(str);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="1-2抛异常的原因"><a href="#1-2抛异常的原因" class="headerlink" title="1.2抛异常的原因"></a>1.2抛异常的原因</h4><p>抛异常是在next方法中，该方法共有两处抛异常，上面的实例中，是在next方法的第一处抛的异常。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> E <span class="hljs-title function_">next</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-keyword">if</span> (modCount != expectedModCount)<br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentModificationException</span>();<br>    <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> cursor;<br>    <span class="hljs-keyword">if</span> (i &gt;= limit)<br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">NoSuchElementException</span>();<br>    Object[] elementData = ArrayList.<span class="hljs-built_in">this</span>.elementData;<br>    <span class="hljs-keyword">if</span> (i &gt;= elementData.length)<br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentModificationException</span>();<br>    cursor = i + <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">return</span> (E) elementData[lastRet = i];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>那么这个modCount的作用是什么呢？<br>modCount是在AbstractList抽象类中定义，且声明为<code>protected transient</code>，该变量实际就是个修改次数的计数标志，以ArrayList为例，会在ArrayList的以下方法中执行<code>modCount++</code>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">trimToSize</span><span class="hljs-params">()</span> &#123; ... &#125;<br><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">ensureExplicitCapacity</span><span class="hljs-params">(<span class="hljs-type">int</span> minCapacity)</span> &#123; ... &#125;<br><span class="hljs-keyword">public</span> E <span class="hljs-title function_">remove</span><span class="hljs-params">(<span class="hljs-type">int</span> index)</span> &#123; ... &#125;<br><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">fastRemove</span><span class="hljs-params">(<span class="hljs-type">int</span> index)</span> &#123; ... &#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">clear</span><span class="hljs-params">()</span> &#123; ... &#125;<br><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">removeRange</span><span class="hljs-params">(<span class="hljs-type">int</span> fromIndex, <span class="hljs-type">int</span> toIndex)</span> &#123; ... &#125;<br><span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">removeIf</span><span class="hljs-params">(Predicate&lt;? <span class="hljs-built_in">super</span> E&gt; filter)</span> &#123; ... &#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">replaceAll</span><span class="hljs-params">(UnaryOperator&lt;E&gt; operator)</span> &#123; ... &#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">sort</span><span class="hljs-params">(Comparator&lt;? <span class="hljs-built_in">super</span> E&gt; c)</span> &#123; ... &#125;<br></code></pre></td></tr></table></figure>
+
+<p>add方法内部会调用到ensureExplicitCapacity方法，也间接调用了modCount++。<br>这些方法的共同点：<em>变更了list的数组长度或移动了list内部的元素。只要list集合内部数组结构上发生了变更，modCount就会自增1</em>。<br>所以上面的例子中，expectedModCount值记录的是调用iterator方法时的modCount值，而调用过一次list.remove之后，modCount自增1，也就与expectedModCount不相等了，所以就抛出异常，表明在迭代过程中list被修改了而快速失败。<br>因此在使用迭代器遍历删除集合元素时，应使用迭代器的remove方法，其内部会更新expectedModCount及cursor，以避免调用next方法时抛异常。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Itr</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Iterator</span>&lt;E&gt; &#123;<br>    ......<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">remove</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">if</span> (lastRet &lt; <span class="hljs-number">0</span>)<br>           <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IllegalStateException</span>();<br>        <span class="hljs-keyword">if</span> (modCount != expectedModCount)<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentModificationException</span>();<br><br>        <span class="hljs-keyword">try</span> &#123;<br>            ArrayList.<span class="hljs-built_in">this</span>.remove(lastRet);<br>            cursor = lastRet;<span class="hljs-comment">//更新cursor，避免next方法中的第二处抛异常</span><br>            lastRet = -<span class="hljs-number">1</span>;<br>            expectedModCount = modCount;<span class="hljs-comment">//调用remove后更新expectedModCount</span><br>            limit--;<span class="hljs-comment">//更新列表长度</span><br>        &#125; <span class="hljs-keyword">catch</span> (IndexOutOfBoundsException ex) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ConcurrentModificationException</span>();<br>        &#125;<br>    &#125;<br>    ......<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="1-3如何避免此异常"><a href="#1-3如何避免此异常" class="headerlink" title="1.3如何避免此异常"></a>1.3如何避免此异常</h4><p>modCount只在集合的内部迭代器中使用，所以规避该异常只需在使用迭代器时考虑迭代器内部的expectedModCount与list的modCount值是否相等，游标cursor是否可能大于数组长度。<br>基于此思考归纳出以下几点可能抛该异常的情景：</p>
+<ul>
+<li>迭代器遍历过程中，调用了集合的remove或add等改变了集合结构的方法；</li>
+<li>foreach循环遍历集合，实际上隐式调用了迭代器遍历，同样调用集合的remove或add等方法会抛异常；</li>
+<li>多线程环境下，迭代器遍历+iterator.remove也可能导致异常，因此多线程环境下建议使用并发集合或做好线程间的同步。</li>
+</ul>
+<p>使用<strong>ListIterator</strong>（list集合特有迭代器）不会发生并发修改异常</p>
+<h2 id="2-Deque的认识"><a href="#2-Deque的认识" class="headerlink" title="2.Deque的认识"></a>2.Deque的认识</h2><p> deque容器为一个给定<em>*类型*<em>的元素进行</em>*线性处理*<em>，像向量一样，它</em>*能够快速地随机访问任一个元素*<em>，并且能够高效地</em>*插入和删除*<em>容器的尾部元素。但它又与<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=vector&spm=1001.2101.3001.7020">vector</a>不同，</em>*deque支持高效插入和删除容器的头部元素*<em>，因此也叫做</em>*<strong>双端队列</strong>*</em></p>
+<p>一个完善，可靠性高的LIFO栈操作由Deque接口</p>
+<h2 id="3-hashCode的作用"><a href="#3-hashCode的作用" class="headerlink" title="3.hashCode的作用"></a>3.hashCode的作用</h2><p>以下是关于HashCode的官方文档定义：</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs vbnet">hashcode方法返回该对象的哈希码值。支持该方法是为哈希表提供一些优点，例如，java.util.Hashtable 提供的哈希表。 <br>hashCode 的常规协定是： <br>在 Java 应用程序执行期间，在同一对象上多次调用 hashCode 方法时，必须一致地返回相同的整数，前提是对象上 <span class="hljs-keyword">equals</span> 比较中所用的信息没有被修改。从某一应用程序的一次执行到同一应用程序的另一次执行，该整数无需保持一致。 <br>如果根据 <span class="hljs-keyword">equals</span>(<span class="hljs-type">Object</span>) 方法，两个对象是相等的，那么在两个对象中的每个对象上调用 hashCode 方法都必须生成相同的整数结果。 <br>以下情况不 是必需的：如果根据 <span class="hljs-keyword">equals</span>(java.lang.<span class="hljs-type">Object</span>) 方法，两个对象不相等，那么在两个对象中的任一对象上调用 hashCode 方法必定会生成不同的整数结果。但是，程序员应该知道，为不相等的对象生成不同整数结果可以提高哈希表的性能。 <br>实际上，由 <span class="hljs-type">Object</span> 类定义的 hashCode 方法确实会针对不同的对象返回不同的整数。（这一般是通过将该对象的内部地址转换成一个整数来实现的，但是 JavaTM 编程语言不需要这种实现技巧。） <br>当<span class="hljs-keyword">equals</span>方法被重写时，通常有必要重写 hashCode 方法，以维护 hashCode 方法的常规协定，该协定声明相等对象必须具有相等的哈希码。<br></code></pre></td></tr></table></figure>
+
+<p>1、hashCode的存在主要是用于查找的快捷性，如Hashtable，HashMap等，hashCode是用来在散列存储结构中确定对象的存储地址的；</p>
+<p>2、如果两个对象相同，就是适用于<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=equals&spm=1001.2101.3001.7020">equals</a>(java.lang.Object) 方法，那么这两个对象的hashCode一定要相同；</p>
+<p>3、如果对象的equals方法被重写，那么对象的hashCode也尽量重写，并且产生hashCode使用的对象，一定要和equals方法中使用的一致，否则就会违反上面提到的第2点；</p>
+<p>4、两个对象的hashCode相同，并不一定表示两个对象就相同，也就是不一定适用于equals(java.lang.Object) 方法，只能够说明这两个对象在散列存储结构中，如Hashtable，他们<strong>“存放在同一个篮子里”</strong>。</p>
+<h2 id="4-为什么重写equals方法，还必须要重写hashcode方法"><a href="#4-为什么重写equals方法，还必须要重写hashcode方法" class="headerlink" title="4.为什么重写equals方法，还必须要重写hashcode方法"></a>4.为什么重写equals方法，还必须要重写hashcode方法</h2><p>为了提高效率，采取<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E9%87%8D%E5%86%99&spm=1001.2101.3001.7020">重写</a>hashcode方法，先进行hashcode比较，如果不同，那么就没必要在进行equals的比较了，这样就大大减少了equals比较的次数，这对比需要比较的数量很大的效率提高是很明显的，一个很好的例子就是在集合中的使用；</p>
+<p>我们都知道java中的List<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E9%9B%86%E5%90%88&spm=1001.2101.3001.7020">集合</a>是有序的，因此是可以重复的，而set集合是无序的，因此是不能重复的，那么怎么能保证不能被放入重复的元素呢，但靠equals方法一样比较的话，如果原来集合中以后又10000个元素了，那么放入10001个元素，难道要将前面的所有元素都进行比较，看看是否有重复，这个效率可想而知，因此hashcode就应遇而生了，java就采用了hash表，利用哈希算法（也叫散列算法），就是将对象数据根据该对象的特征使用特定的算法将其定义到一个地址上，那么在后面定义进来的数据只要看对应的hashcode地址上是否有值，那么就用equals比较，如果没有则直接插入，只要就大大减少了equals的使用次数，执行效率就大大提高了。</p>
+<p>同时也是为了保证同一个对象，保证在<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=equals&spm=1001.2101.3001.7020">equals</a>相同的情况下hashcode值必定相同，如果重写了equals而未重写hashcode方法，可能就会出现两个没有关系的对象equals相同的（因为equal都是根据对象的特征进行重写的），但hashcode确实不相同的。</p>
+<p>总结来说就是两点</p>
+<p><strong>1.使用hashcode方法提前校验，可以避免每一次比对都调用equals方法，提高效率</strong></p>
+<p><strong>2.保证是同一个对象，如果重写了equals方法，而没有重写hashcode方法，会出现equals相等的对象，hashcode不相等的情况，重写hashcode方法就是为了避免这种情况的出现。</strong></p>
+<p><strong>小总结：</strong></p>
+<ul>
+<li>hashCode主要用于提升查询效率，来确定在散列结构中对象的存储地址；</li>
+<li>重写equals()必须重写hashCode()，二者参与计算的自身属性字段应该相同；</li>
+<li>hash类型的存储结构，添加元素重复性校验的标准就是先取hashCode值，后判断equals()；</li>
+<li>equals()相等的两个对象，hashcode()一定相等；</li>
+<li>反过来：hashcode()不等，一定能推出equals()也不等；</li>
+<li>hashcode()相等，equals()可能相等，也可能不等。</li>
+</ul>
+<h2 id="5-ArrayList扩容机制"><a href="#5-ArrayList扩容机制" class="headerlink" title="5.ArrayList扩容机制"></a>5.ArrayList扩容机制</h2><p>一.<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=ArrayList&spm=1001.2101.3001.7020">ArrayList</a>继承了AbstractList，实现了List接口，底层实现基于数组，因此可以认为是一个可变长度的数组。<br>二.在讲扩容机制之前，我们需要了解一下ArrayList中最主要的几个变量：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//定义一个空数组以供使用</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Object[] EMPTY_ELEMENTDATA = &#123;&#125;;<br><span class="hljs-comment">//也是一个空数组，跟上边的空数组不同之处在于，这个是在默认构造器时返回的，扩容时需要用到这个作判断，后面会讲到</span><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = &#123;&#125;;<br><span class="hljs-comment">//存放数组中的元素，注意此变量是transient修饰的，不参与序列化</span><br><span class="hljs-keyword">transient</span> Object[] elementData;<br><span class="hljs-comment">//数组的长度，此参数是数组中实际的参数，区别于elementData.length，后边会说到</span><br><span class="hljs-keyword">private</span> <span class="hljs-type">int</span> size;<br></code></pre></td></tr></table></figure>
+
+<p>三.ArrayList有三个构造函数，不同的构造函数会影响后边的扩容机制判断<br>1.默认的无参构造</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-title function_">ArrayList</span><span class="hljs-params">()</span> &#123;<br>	<span class="hljs-built_in">this</span>.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以看到，调用此构造函数，返回了一个空的数组DEFAULTCAPACITY_EMPTY_ELEMENTDATA，此数组长度为0.<br>2.给定初始容量的构造函数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-title function_">ArrayList</span><span class="hljs-params">(<span class="hljs-type">int</span> initialCapacity)</span> &#123;<br>    <span class="hljs-keyword">if</span> (initialCapacity &gt; <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-built_in">this</span>.elementData = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Object</span>[initialCapacity];<br>    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (initialCapacity == <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-built_in">this</span>.elementData = EMPTY_ELEMENTDATA;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">IllegalArgumentException</span>(<span class="hljs-string">&quot;Illegal Capacity: &quot;</span>+<br>                                           initialCapacity);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>逻辑很简单，就是构造一个具有指定长度的空数组，当initialCapacity为0时，返回EMPTY_ELEMENTDATA<br>3.包含特定集合元素的构造函数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-title function_">ArrayList</span><span class="hljs-params">(Collection&lt;? extends E&gt; c)</span> &#123;<br>    elementData = c.toArray();<br>    <span class="hljs-keyword">if</span> ((size = elementData.length) != <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-comment">// c.toArray might (incorrectly) not return Object[] (see 6260652)</span><br>        <span class="hljs-keyword">if</span> (elementData.getClass() != Object[].class)<br>            elementData = Arrays.copyOf(elementData, size, Object[].class);<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-comment">// replace with empty array.</span><br>        <span class="hljs-built_in">this</span>.elementData = EMPTY_ELEMENTDATA;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>把传入的集合转换为数组，然后通过Arrays.copyOf方法把集合中的元素拷贝到elementData中。同样，若传入的集合长度为0，返回EMPTY_ELEMENTDATA<br>四.扩容机制<br>扩容开始于集合添加元素方法，添加元素有两种方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">add</span><span class="hljs-params">(E e)</span> &#123;<br>    ensureCapacityInternal(size + <span class="hljs-number">1</span>);  <span class="hljs-comment">// Increments modCount!!</span><br>    elementData[size++] = e;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">add</span><span class="hljs-params">(<span class="hljs-type">int</span> index, E element)</span> &#123;<br>    rangeCheckForAdd(index);<br><br>   ensureCapacityInternal(size + <span class="hljs-number">1</span>);  <span class="hljs-comment">// Increments modCount!!</span><br>    System.arraycopy(elementData, index, elementData, index + <span class="hljs-number">1</span>,size - index);<br>    elementData[index] = element;<br>    size++;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以看到两个方法都调用了ensureCapacityInternal(size + 1)方法，把数组长度加1以确保能存下下一个数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">ensureCapacityInternal</span><span class="hljs-params">(<span class="hljs-type">int</span> minCapacity)</span> &#123;<br>    ensureExplicitCapacity(calculateCapacity(elementData, minCapacity));<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>此方法会先调用calculateCapacity方法，此时minCapacity为1，即size+1，因为初始时size为0</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">calculateCapacity</span><span class="hljs-params">(Object[] elementData, <span class="hljs-type">int</span> minCapacity)</span> &#123;<br>    <span class="hljs-keyword">if</span> (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA) &#123;<br>        <span class="hljs-keyword">return</span> Math.max(DEFAULT_CAPACITY, minCapacity);<br>    &#125;<br>    <span class="hljs-keyword">return</span> minCapacity;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>重点来了，此方法会判断当前数组是否为DEFAULTCAPACITY_EMPTY_ELEMENTDATA，之前就强调了无参构造时才会返回这个数组。所以，若创建ArrayList时调用的是无参构造，此方法会返回DEFAULT_CAPACITY（值为10）和minCapacity的最大值，因此，最终会返回固定值10；若创建ArrayList时调用了有参构造，则此方法会返回1，注意这个<br>minCapacity变量只是第一次调用add方法时值为1，此后的调用需要根据实际的数组长度size+1。<br>然后调用ensureExplicitCapacity方法，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">ensureExplicitCapacity</span><span class="hljs-params">(<span class="hljs-type">int</span> minCapacity)</span> &#123;<br>    modCount++;<br>    <span class="hljs-comment">// overflow-conscious code</span><br>    <span class="hljs-keyword">if</span> (minCapacity - elementData.length &gt; <span class="hljs-number">0</span>)<br>        grow(minCapacity);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>modCount++用到了快速失败机制，此处先不做讨论。<br>如果minCapacity大于elementData.length,则会调用grow方法，注意，这个elementData.length返回的是当前数组的容量，而不是数组实际的长度size。如果调用了有参构造，例如传入的容量为5，则此时elementData.length值即为5，而此时第一次调用add时，size值为0，因此minCapacity为1，不满足条件，此情况不需要扩容调用grow方法；如果调用了无参构造返回数组DEFAULTCAPACITY_EMPTY_ELEMENTDATA，注意这个数组只是一个空数组，因此此时elementData.length为0，满足条件，需要扩容调用grow方法。<br>可能说的太啰嗦，通俗来讲，就是如果ArrayList给定了特定初始容量，则此处需要根据实际情况确定是否调用grow方法，即有可能不需要扩容。如果没有指定初始容量，第一次调用add则此处一定需要调用grow方法。<br>那么，下面就看grow方法都做了哪些处理吧</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">grow</span><span class="hljs-params">(<span class="hljs-type">int</span> minCapacity)</span> &#123;<br>    <span class="hljs-comment">// overflow-conscious code</span><br>    <span class="hljs-type">int</span> <span class="hljs-variable">oldCapacity</span> <span class="hljs-operator">=</span> elementData.length;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">newCapacity</span> <span class="hljs-operator">=</span> oldCapacity + (oldCapacity &gt;&gt; <span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">if</span> (newCapacity - minCapacity &lt; <span class="hljs-number">0</span>)<br>        newCapacity = minCapacity;<br>    <span class="hljs-keyword">if</span> (newCapacity - MAX_ARRAY_SIZE &gt; <span class="hljs-number">0</span>)<br>        newCapacity = hugeCapacity(minCapacity);<br>    <span class="hljs-comment">// minCapacity is usually close to size, so this is a win:</span><br>    elementData = Arrays.copyOf(elementData, newCapacity);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>int newCapacity = oldCapacity + (oldCapacity &gt;&gt; 1)此行代码即为扩容的核心，oldCapacity为原来的容量，右移一位，即除以2，因此这句的意思就是新的容量newCapacity=oldCapacity+oldCapacity /2，即原来的1.5倍。<br>然后判断newCapacity如果小于传入的minCapacity，则直接让newCapacity等于minCapacity，即不需要扩容计算（当无参构造时，elementData.length为0，所以oldCapacity也为0，minCapacity为10，因此最终newCapacity为10）。<br>然后判断newCapacity是否大于设定的MAX_ARRAY_SIZE，此处<br><a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=private&spm=1001.2101.3001.7020">private</a> static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;<br>如果大于，则调用hugeCapacity方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">hugeCapacity</span><span class="hljs-params">(<span class="hljs-type">int</span> minCapacity)</span> &#123;<br>    <span class="hljs-keyword">if</span> (minCapacity &lt; <span class="hljs-number">0</span>) <span class="hljs-comment">// overflow</span><br>        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">OutOfMemoryError</span>();<br>    <span class="hljs-keyword">return</span> (minCapacity &gt; MAX_ARRAY_SIZE) ?<br>        Integer.MAX_VALUE :<br>        MAX_ARRAY_SIZE;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>如果minCapacity大于MAX_ARRAY_SIZE，则返回Integer的最大值，否则返回MAX_ARRAY_SIZE<br>最后，通过Arrays.copyOf方法把原数组的内容放到更大容量的数组里面。</p>
+<h2 id="6-Comparable和Comparator区别"><a href="#6-Comparable和Comparator区别" class="headerlink" title="6.Comparable和Comparator区别"></a>6.Comparable和Comparator区别</h2><h3 id="Comparable"><a href="#Comparable" class="headerlink" title="Comparable"></a>Comparable</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> java.lang;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Comparable</span>&lt;T&gt; &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compareTo</span><span class="hljs-params">(T o)</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Comparator"><a href="#Comparator" class="headerlink" title="Comparator"></a>Comparator</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> java.util;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Comparator</span>&lt;T&gt; &#123;<br>    <span class="hljs-comment">//必须实现的方法</span><br>    <span class="hljs-type">int</span> <span class="hljs-title function_">compare</span><span class="hljs-params">(T o1, T o2)</span>;<br>    <span class="hljs-comment">//选择实现</span><br>    <span class="hljs-type">boolean</span> <span class="hljs-title function_">equals</span><span class="hljs-params">(Object obj)</span>;<br> &#125;<br></code></pre></td></tr></table></figure>
+
+<p><em>为什么可以不实现 equals(Object obj) 函数呢？ 因为任何类，默认都是已经实现了equals(Object obj)的。 Java中的一切类都是继承于java.lang.Object，在Object.java中实现了equals(Object obj)函数；所以，其它所有的类也相当于都实现了该函数。</em></p>
+<h3 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h3><ol>
+<li>两者都是用来用作对象之间的比较，都可以自定义比较规则；</li>
+<li>两者都是返回一个描述对象之间关系的int；</li>
+</ol>
+<h3 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h3><ol>
+<li>comparable 在java.lang包下，comparator在java.util包下；</li>
+<li>实现comparable 必须重写compareTo(T o)，实现comparator必须重写compare(T o1,T o2);</li>
+<li><strong>comparable是内在比较器</strong>，表示这个类的对象直接可以相互比较this.compareTo(this)，该类支持排序，这个类对象组成的集合就可以直接使用Collections.sort方法排序，此外，“实现Comparable接口的类的对象”可以用作“有序映射(如TreeMap)”中的键或“有序集合(TreeSet)”中的元素，而不需要指定比较器。<strong>comparator是外在比较器</strong>，如果想比较两个类又没有实现comparable或者想实现比较排序的，可以用Comparator.compara(o1,o2);</li>
+<li>comparator 是典型的策略模式（策略模式指定义一组算法类，将每个算法实现封装起来，让他们可以相互替换，不改变对象自身，而用一个策略对象（strategy object）来改变它的行为。）每个类都可以实现comparator，都可以实现比较排序；</li>
+<li>Comparator与Comparable同时存在的情况下，<strong>比较器Comparator优先级高。</strong></li>
+<li>使用Comparable需要修改原先的实体类，是属于一种自然排序，而Comparator 是不用修改原先的类的实现一个新的比较器 。Comparator实际应用广</li>
+</ol>
+<h2 id="7-单例模式"><a href="#7-单例模式" class="headerlink" title="7.单例模式"></a>7.单例模式</h2><h3 id="7-1-什么是单例模式"><a href="#7-1-什么是单例模式" class="headerlink" title="7.1. 什么是单例模式"></a>7.1. 什么是单例模式</h3><p><strong>单例模式是指在内存中只会创建且仅创建一次对象的设计模式。</strong>在程序中<strong>多次使用同一个对象且作用相同</strong>时，为了防止频繁地创建对象使得内存飙升，单例模式可以让程序仅在内存中<strong>创建一个对象</strong>，让所有需要调用的地方都共享这一单例对象。</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9jZG4ubmxhcmsuY29tL3l1cXVlLzAvMjAyMC9wbmcvMTY5NDAyOS8xNTk0NTE1MTI2Njk4LTg5NmU2NDQzLTBmOWUtNGM4Yy1iNGEwLWJiMDRjOWUxY2I2ZC5wbmc?x-oss-process=image/format,png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<h3 id="7-2-单例模式的类型"><a href="#7-2-单例模式的类型" class="headerlink" title="7.2. 单例模式的类型"></a>7.2. 单例模式的类型</h3><p>单例模式有两种类型：</p>
+<ul>
+<li>懒汉式：在<strong>真正需要使用</strong>对象时才去创建该单例类对象</li>
+<li>饿汉式：在<strong>类加载</strong>时已经创建好该单例对象，等待被程序使用</li>
+</ul>
+<h4 id="7-2-1-懒汉式创建单例对象"><a href="#7-2-1-懒汉式创建单例对象" class="headerlink" title="7.2.1 懒汉式创建单例对象"></a>7.2.1 懒汉式创建单例对象</h4><p>懒汉式创建对象的方法是在程序使用对象前，先判断该对象是否已经实例化<strong>（判空），</strong>若已实例化直接返回该类对象。，否则则先执行实例化操作。</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9jZG4ubmxhcmsuY29tL3l1cXVlLzAvMjAyMC9wbmcvMTY5NDAyOS8xNTk0NTE1NTM5MjI2LWViODdmMGUxLTE2MjAtNGFmYy1iMTQwLWEzZGZiMGIxNmRjYy5wbmc?x-oss-process=image/format,png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>根据上面的流程图，就可以写出下面的这段代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Singleton</span> &#123;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Singleton singleton;<br>    <span class="hljs-keyword">private</span> <span class="hljs-title function_">Singleton</span><span class="hljs-params">()</span>&#123;&#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton <span class="hljs-title function_">getInstance</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">if</span> (singleton == <span class="hljs-literal">null</span>) &#123;<br>            singleton = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Singleton</span>();<br>        &#125;<br>        <span class="hljs-keyword">return</span> singleton;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="7-2-2饿汉式创建单例对象"><a href="#7-2-2饿汉式创建单例对象" class="headerlink" title="7.2.2饿汉式创建单例对象"></a>7.2.2饿汉式创建单例对象</h4><p>饿汉式在<strong>类加载</strong>时已经创建好该对象，在程序调用时<strong>直接返回</strong>该单例对象即可，即我们在编码时就已经指明了要马上创建这个对象，<strong>不需要等到被调用时再去创****建</strong>。</p>
+<p>关于类加载，涉及到JVM的内容，我们目前可以简单认为在程序启动时，这个单例对象就已经创建好了。</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9jZG4ubmxhcmsuY29tL3l1cXVlLzAvMjAyMC9wbmcvMTY5NDAyOS8xNTk0NTE4NjM2NTgyLTYzN2RjZjZhLTgwOTEtNDBkNC05YWNjLTQ2ZmFjYTllM2NkMi5wbmc?x-oss-process=image/format,png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Singleton</span>&#123;<br>    <br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-type">Singleton</span> <span class="hljs-variable">singleton</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Singleton</span>();<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-title function_">Singleton</span><span class="hljs-params">()</span>&#123;&#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton <span class="hljs-title function_">getInstance</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> singleton;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>注意上面的代码在第3行已经实例化好了一个Singleton对象在内存中，不会有多个Singleton对象实例存在，类在加载时会在堆内存中创建一个Singleton对象，当类被卸载时，Singleton对象也随之消亡了。</p>
+<h3 id="7-3-懒汉式如何保证只创建一个对象"><a href="#7-3-懒汉式如何保证只创建一个对象" class="headerlink" title="7.3. 懒汉式如何保证只创建一个对象"></a>7.3. 懒汉式如何保证只创建一个对象</h3><p>我们再来回顾懒汉式的核心方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton <span class="hljs-title function_">getInstance</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-keyword">if</span> (singleton == <span class="hljs-literal">null</span>) &#123;<br>        singleton = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Singleton</span>();<br>    &#125;<br>    <span class="hljs-keyword">return</span> singleton;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这个方法其实是存在问题的，试想一下，如果两个线程同时判断singleton为空，那么它们都会去实例化一个Singleton对象，这就变成双例了。所以，我们要解决的是<strong>线程安全</strong>问题。</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9jZG4ubmxhcmsuY29tL3l1cXVlLzAvMjAyMC9wbmcvMTY5NDAyOS8xNTk0NTIwNjkyNjU1LWUxY2MwNTM4LTE2NWYtNDYxNS05ODgwLWJiYmI3YTFmOTJhOC5wbmc?x-oss-process=image/format,png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>最容易想到的解决方法就是在方法上加锁，或者是对类对象加锁，程序就会变成下面这个样子</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">synchronized</span> Singleton <span class="hljs-title function_">getInstance</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-keyword">if</span> (singleton == <span class="hljs-literal">null</span>) &#123;<br>        singleton = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Singleton</span>();<br>    &#125;<br>    <span class="hljs-keyword">return</span> singleton;<br>&#125;<br><span class="hljs-comment">// 或者</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton <span class="hljs-title function_">getInstance</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-keyword">synchronized</span>(Singleton.class) &#123;   <br>        <span class="hljs-keyword">if</span> (singleton == <span class="hljs-literal">null</span>) &#123;<br>            singleton = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Singleton</span>();<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> singleton;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>这样就规避了两个线程同时创建Singleton对象的风险，但是引来另外一个问题：<strong>每次去获取对象都需要先获取锁，并发性能非常地差，极端情况下，可能会出现卡顿现象。</strong></p>
+<p>接下来要做的就是<strong>优化性能，目标是：</strong>如果没有实例化对象则加锁创建，如果已经实例化了，则不需要加锁，直接获取实例</p>
+<p><strong>所以直接在方法上加锁的方式就被废掉了，因为这种方式无论如何都需要先获取锁</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton <span class="hljs-title function_">getInstance</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-keyword">if</span> (singleton == <span class="hljs-literal">null</span>) &#123;  <span class="hljs-comment">// 线程A和线程B同时看到singleton = null，如果不为null，则直接返回singleton</span><br>       <span class="hljs-keyword">synchronized</span>(Singleton.class) &#123; <span class="hljs-comment">// 线程A或线程B获得该锁进行初始化</span><br>            <span class="hljs-keyword">if</span> (singleton == <span class="hljs-literal">null</span>) &#123; <span class="hljs-comment">// 其中一个线程进入该分支，另外一个线程则不会进入该分支</span><br>                singleton = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Singleton</span>();<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> singleton;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>上面的代码已经完美地解决了<strong>并发安全+性能低效</strong>问题：</p>
+<ul>
+<li>第2行代码，如果singleton不为空，则直接返回对象，不需要获取锁；而如果多个线程发现singleton为空，则进入分支；</li>
+<li>第3行代码，多个线程尝试争抢同一个锁，只有一个线程争抢成功，第一个获取到锁的线程会再次判断singleton是否为空，因为singleton有可能已经被之前的线程实例化</li>
+<li>其它之后获取到锁的线程在执行到第4行校验代码，发现singleton已经不为空了，则不会再new一个对象，直接返回对象即可</li>
+<li>之后所有进入该方法的线程都不会去获取锁，在第一次判断singleton对象时已经不为空了</li>
+</ul>
+<p>因为需要两次判空，且对类对象加锁，该懒汉式写法也被称为：<strong>Double Check（双重校验） + Lock（加锁）</strong></p>
+<p>完整的代码如下所示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Singleton</span> &#123;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Singleton singleton;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-title function_">Singleton</span><span class="hljs-params">()</span>&#123;&#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton <span class="hljs-title function_">getInstance</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">if</span> (singleton == <span class="hljs-literal">null</span>) &#123;  <span class="hljs-comment">// 线程A和线程B同时看到singleton = null，如果不为null，则直接返回singleton</span><br>            <span class="hljs-keyword">synchronized</span>(Singleton.class) &#123; <span class="hljs-comment">// 线程A或线程B获得该锁进行初始化</span><br>                <span class="hljs-keyword">if</span> (singleton == <span class="hljs-literal">null</span>) &#123; <span class="hljs-comment">// 其中一个线程进入该分支，另外一个线程则不会进入该分支</span><br>			       singleton = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Singleton</span>();<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> singleton;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>上面这段代码已经近似完美了，但是还存在最后一个问题：指令重排</p>
+<h3 id="7-4-使用volatile防止指令重排"><a href="#7-4-使用volatile防止指令重排" class="headerlink" title="7.4. 使用volatile防止指令重排"></a>7.4. 使用volatile防止指令重排</h3><p>创建一个对象，在JVM中会经过三步：</p>
+<p>（1）为singleton分配内存空间</p>
+<p>（2）初始化singleton对象</p>
+<p>（3）将singleton指向分配好的内存空间</p>
+<p>指令重排序是指：<strong>JVM在保证最终结果正确的情况下，可以不按照程序编码的顺序执行语句，尽可能提高程序的性能</strong></p>
+<p>在这三步中，第2、3步有可能会发生指令重排现象，创建对象的顺序变为1-3-2，会导致多个线程获取对象时，有可能线程A创建对象的过程中，执行了1、3步骤，线程B判断singleton已经不为空，获取到未初始化的singleton对象，就会报NPE异常。文字较为晦涩，可以看流程图：</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9jZG4ubmxhcmsuY29tL3l1cXVlLzAvMjAyMC9wbmcvMTY5NDAyOS8xNTk0NTIyMzkwNzk3LTRkZjBkMDA4LTM3MmMtNDkxZi04YjlhLWY4NjBmODAzNzFhYi5wbmc?x-oss-process=image/format,png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>使用volatile关键字可以<strong>防止指令重排序，</strong>其原理较为复杂，这篇博客不打算展开，可以这样理解：<strong>使用volatile关键字修饰的变量，可以保证其指令执行的顺序与程序指明的顺序一致，不会发生顺序变换</strong>，这样在多线程环境下就不会发生NPE异常了。</p>
+<blockquote>
+<p>volatile还有第二个作用：使用volatile关键字修饰的变量，可以保证其内存可见性，即每一时刻线程读取到该变量的值都是内存中最新的那个值，<strong>线程每次操作该变量都需要先读取该变量。</strong></p>
+</blockquote>
+<p>最终的代码如下所示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Singleton</span> &#123;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">volatile</span> Singleton singleton;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-title function_">Singleton</span><span class="hljs-params">()</span>&#123;&#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Singleton <span class="hljs-title function_">getInstance</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">if</span> (singleton == <span class="hljs-literal">null</span>) &#123;  <span class="hljs-comment">// 线程A和线程B同时看到singleton = null，如果不为null，则直接返回singleton</span><br>            <span class="hljs-keyword">synchronized</span>(Singleton.class) &#123; <span class="hljs-comment">// 线程A或线程B获得该锁进行初始化</span><br>                <span class="hljs-keyword">if</span> (singleton == <span class="hljs-literal">null</span>) &#123; <span class="hljs-comment">// 其中一个线程进入该分支，另外一个线程则不会进入该分支</span><br>                    singleton = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Singleton</span>();<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> singleton;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="7-5-破坏懒汉式单例与饿汉式单例"><a href="#7-5-破坏懒汉式单例与饿汉式单例" class="headerlink" title="7.5. 破坏懒汉式单例与饿汉式单例"></a>7.5. 破坏懒汉式单例与饿汉式单例</h3><p>无论是完美的懒汉式还是饿汉式，终究敌不过<strong>反射和序列化</strong>，它们俩都可以把单例对象破坏掉（产生多个对象）。</p>
+<h5 id="1：演示利用反射破坏单例模式"><a href="#1：演示利用反射破坏单例模式" class="headerlink" title="1：演示利用反射破坏单例模式"></a>1：演示利用<strong>反射</strong>破坏单例模式</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-comment">// 获取类的显式构造器</span><br>    Constructor&lt;Singleton&gt; construct = Singleton.class.getDeclaredConstructor();<br>    <span class="hljs-comment">// 可访问私有构造器</span><br>    construct.setAccessible(<span class="hljs-literal">true</span>); <br>    <span class="hljs-comment">// 利用反射构造新对象</span><br>    <span class="hljs-type">Singleton</span> <span class="hljs-variable">obj1</span> <span class="hljs-operator">=</span> construct.newInstance(); <br>    <span class="hljs-comment">// 通过正常方式获取单例对象</span><br>    <span class="hljs-type">Singleton</span> <span class="hljs-variable">obj2</span> <span class="hljs-operator">=</span> Singleton.getInstance(); <br>    System.out.println(obj1 == obj2); <span class="hljs-comment">// false</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>上述的代码一针见血了：利用反射，强制访问类的私有构造器，去创建另一个对象</p>
+<h5 id="2：利用序列化与反序列化破坏单例模式"><a href="#2：利用序列化与反序列化破坏单例模式" class="headerlink" title="2：利用序列化与反序列化破坏单例模式"></a>2：利用<strong>序列化与反序列化</strong>破坏单例模式</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>    <span class="hljs-comment">// 创建输出流</span><br>    <span class="hljs-type">ObjectOutputStream</span> <span class="hljs-variable">oos</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ObjectOutputStream</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileOutputStream</span>(<span class="hljs-string">&quot;Singleton.file&quot;</span>));<br>    <span class="hljs-comment">// 将单例对象写到文件中</span><br>    oos.writeObject(Singleton.getInstance());<br>    <span class="hljs-comment">// 从文件中读取单例对象</span><br>    <span class="hljs-type">File</span> <span class="hljs-variable">file</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">File</span>(<span class="hljs-string">&quot;Singleton.file&quot;</span>);<br>    <span class="hljs-type">ObjectInputStream</span> <span class="hljs-variable">ois</span> <span class="hljs-operator">=</span>  <span class="hljs-keyword">new</span> <span class="hljs-title class_">ObjectInputStream</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">FileInputStream</span>(file));<br>    <span class="hljs-type">Singleton</span> <span class="hljs-variable">newInstance</span> <span class="hljs-operator">=</span> (Singleton) ois.readObject();<br>    <span class="hljs-comment">// 判断是否是同一个对象</span><br>    System.out.println(newInstance == Singleton.getInstance()); <span class="hljs-comment">// false</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>两个对象地址不相等的原因是：readObject() 方法读入对象时，<strong>它必定会返回一个新的对象实例</strong>，必然指向新的内存地址。</p>
+<h3 id="7-6-枚举实现"><a href="#7-6-枚举实现" class="headerlink" title="7.6.枚举实现"></a>7.6.枚举实现</h3><p>在 JDK1.5 后，使用 Java 语言实现单例模式的方式又多了一种：<strong>枚举</strong></p>
+<p>我们先来看看枚举如何实现单例模式的，如下代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> <span class="hljs-title class_">Singleton</span> &#123;<br>    INSTANCE;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">doSomething</span><span class="hljs-params">()</span> &#123;<br>        System.out.println(<span class="hljs-string">&quot;这是枚举类型的单例模式！&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>需要思考：<strong>使用枚举实现单例模式的优势在哪里？</strong></p>
+<p><strong>优势1</strong>：代码对比饿汉式与懒汉式来说，更加地简洁; 其次，既然是实现单例模式，那这种写法<strong>必定满足单例模式</strong>的要求，而且使用枚举实现时，没有做任何额外的处理。</p>
+<p><strong>优势2</strong>：它不需要做任何额外的操作去保证对象单一性与线程安全性</p>
+<p>我写了一段测试代码放在下面，这一段代码可以<strong>证明程序启动时仅会创建一个 Singleton 对象</strong>，且是线程安全的。</p>
+<blockquote>
+<p>我们可以简单地理解枚举实现单例的过程：<strong>在程序启动时，会调用Singleton的空参构造器，实例化好一个Singleton对象赋给INSTANCE，之后再也不会实例化</strong></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> <span class="hljs-title class_">Singleton</span> &#123;<br>    INSTANCE;<br>    Singleton() &#123; System.out.println(<span class="hljs-string">&quot;枚举创建对象了&quot;</span>); &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123; <span class="hljs-comment">/* test(); */</span> &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">test</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">Singleton</span> <span class="hljs-variable">t1</span> <span class="hljs-operator">=</span> Singleton.INSTANCE;<br>        <span class="hljs-type">Singleton</span> <span class="hljs-variable">t2</span> <span class="hljs-operator">=</span> Singleton.INSTANCE;<br>        System.out.print(<span class="hljs-string">&quot;t1和t2的地址是否相同：&quot;</span> + t1 == t2);<br>    &#125;<br>&#125;       <br><span class="hljs-comment">// 枚举创建对象了</span><br><span class="hljs-comment">// t1和t2的地址是否相同：true</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>优势3</strong>：使用枚举可以防止调用者使用<strong>反射</strong>、<strong>序列化与反序列化</strong>机制强制生成多个单例对象，破坏单例模式。</p>
+<p>防破坏的原理如下：</p>
+<p><strong>（1）防反射</strong></p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9jZG4ubmxhcmsuY29tL3l1cXVlLzAvMjAyMC9wbmcvMTY5NDAyOS8xNTk1MDg0MzI2NDM4LTgxYTkwNTdiLTIwZmItNDMyOS04NDU5LWRkYjJlY2NiMGQ0NS5wbmc?x-oss-process=image/format,png" srcset="/img/loading.gif" lazyload alt="image-20200718213354831.png"></p>
+<p>枚举类默认继承了 Enum 类，在利用反射调用 newInstance() 时，会判断该类是否是一个枚举类，如果是，则抛出异常。</p>
+<p><strong>（2）防止反序列化创建多个枚举对象</strong></p>
+<p>在读入Singleton对象时，每个枚举类型和枚举名字都是唯一的，所以在序列化时，仅仅只是对枚举的<strong>类型和变量名</strong>输出到文件中，在读入文件反序列化成对象时，<strong>利用 Enum 类的 valueOf(String name) 方法</strong>根据变量的名字查找对应的枚举对象。</p>
+<p>所以，在序列化和反序列化的过程中，只是写出和读入了<strong>枚举类型和名字</strong>，没有任何关于对象的操作。</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9jZG4ubmxhcmsuY29tL3l1cXVlLzAvMjAyMC9wbmcvMTY5NDAyOS8xNTk1MDg0MzY4MDE5LWQ2NzUzNzg1LWM0ZWMtNGI4MC05ODFlLWEzNzFjOWJlNDE5Yy5wbmc?x-oss-process=image/format,png" srcset="/img/loading.gif" lazyload alt="image-20200718224707754.png"></p>
+<p>小总结：</p>
+<p>（1）Enum 类内部使用<strong>Enum 类型判定</strong>防止通过反射创建多个对象</p>
+<p>（2）Enum 类通过写出（读入）对象类型和枚举名字将对象序列化（反序列化），<strong>通过 valueOf() 方法匹配枚举名</strong>找到内存中的唯一的对象实例，防止通过反序列化构造多个对象</p>
+<p>（3）枚举类不需要关注线程安全、破坏单例和性能问题，因为其创建对象的时机与<strong>饿汉式单例有异曲同工之妙</strong>。</p>
+<h3 id="7-7-总结"><a href="#7-7-总结" class="headerlink" title="7.7.总结"></a>7.7.总结</h3><p>（1）单例模式常见的写法有两种：<strong>懒汉式、饿汉式</strong></p>
+<p>（2）懒汉式：在需要用到对象时才实例化对象，正确的实现方式是：<strong>Double Check + Lock</strong>，解决了并发安全和性能低下问题</p>
+<p>（3）饿汉式：在<strong>类加载</strong>时已经创建好该单例对象，在获取单例对象时直接返回对象即可，不会存在并发安全和性能问题。</p>
+<p>（4）在开发中如果对<strong>内存要求非常高</strong>，那么使用懒汉式写法，可以在特定时候才创建该对象；</p>
+<p>（5）如果对内存要求不高使用饿汉式写法，因为<strong>简单不易出错</strong>，且没有任何并发安全和性能问题</p>
+<p>（6）为了防止多线程环境下，因为指令重排序导致变量报NPE，<strong>需要在单例对象上添加volatile关键字防止指令重排序</strong></p>
+<p>（7）最优雅的实现方式是使用<strong>枚举</strong>，其代码精简，没有线程安全问题，且 Enum 类内部<strong>防止反射和反序列化时破坏单例</strong>。</p>
+<h2 id="8-Spring-AOP和Spring-IOC"><a href="#8-Spring-AOP和Spring-IOC" class="headerlink" title="8.Spring AOP和Spring IOC"></a>8.Spring AOP和Spring IOC</h2><h3 id="8-1-Spring-AOP"><a href="#8-1-Spring-AOP" class="headerlink" title="8.1 Spring AOP"></a>8.1 Spring AOP</h3><p>AOP（Aspect Oriented Programming），面向切面编程，通过预编译方式和运行期动态代理实现程序功能，AOP可是说是OOP的延续，利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各个部分之间的耦合度降低，提高程序的复用性，提高开发效率。AOP底层是通过Spring提供的动态代理技术实现的，在运行期间，Spring通过动态代理技术动态的生成代理对象，代理对象方法执行时进行增强功能的介入，再去调用目标对象的方法，从而完成功能的增强</p>
+<h2 id="9-浏览器输入域名后发生"><a href="#9-浏览器输入域名后发生" class="headerlink" title="9.浏览器输入域名后发生"></a>9.浏览器输入域名后发生</h2><p>1.DNS解析</p>
+<p>2.建立TCP连接</p>
+<p>3.发送HTTP请求</p>
+<p>4.服务器解析请求</p>
+<p>5.返回HTTP响应</p>
+<p>6.TCP四次挥手</p>
+<p>7.浏览器解析HTML</p>
+<h2 id="10-mysql优化"><a href="#10-mysql优化" class="headerlink" title="10.mysql优化"></a>10.mysql优化</h2><h3 id="SELECT语句-执行顺序："><a href="#SELECT语句-执行顺序：" class="headerlink" title="SELECT语句 - 执行顺序："></a>SELECT语句 - 执行顺序：</h3><blockquote>
+<p><strong>FROM</strong><br>&lt;表名&gt; # 选取表，将多个表数据通过笛卡尔积变成一个表。<br><strong>ON</strong><br>&lt;筛选条件&gt; # 对笛卡尔积的虚表进行筛选<br><strong>JOIN</strong> &lt;join, left join, right join…&gt;<br>&lt;join表&gt; # 指定join，用于添加数据到on之后的虚表中，例如left join会将左表的剩余数据添加到虚表中<br><strong>WHERE</strong><br>&lt;where条件&gt; # 对上述虚表进行筛选<br><strong>GROUP BY</strong><br>&lt;分组条件&gt; # 分组<br>&lt;SUM()等聚合函数&gt; # 用于having子句进行判断，在书写上这类聚合函数是写在having判断里面的<br><strong>HAVING</strong><br>&lt;分组筛选&gt; # 对分组后的结果进行聚合筛选<br><strong>SELECT</strong><br>&lt;返回数据列表&gt; # 返回的单列必须在group by子句中，聚合函数除外<br><strong>DISTINCT</strong><br># 数据除重<br><strong>ORDER BY</strong><br>&lt;排序条件&gt; # 排序<br><strong>LIMIT</strong><br>&lt;行数限制&gt;</p>
+</blockquote>
+<h3 id="不使用-Select"><a href="#不使用-Select" class="headerlink" title="不使用 Select*"></a>不使用 Select*</h3><p>使用select * 取出全部列，会让优化器无法完成索引覆盖扫描这类优化，会影响优化器对执行计划的选择，也会增加网络带宽消耗，更会带来额外的I/O,内存和CPU消耗。</p>
+<p>建议提出业务实际需要的列数，将指定列名以取代select *</p>
+<h3 id="索引覆盖"><a href="#索引覆盖" class="headerlink" title="索引覆盖"></a>索引覆盖</h3><p>执行下面sql查询</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> id,age <span class="hljs-keyword">from</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">where</span> age <span class="hljs-operator">=</span> <span class="hljs-number">10</span>;<br></code></pre></td></tr></table></figure>
+
+<p>可通过普通索引列(age) 就能获取SQL所需的所有列数据，无需回表，速度更快。</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs n1ql"><span class="hljs-keyword">explain</span> 分析:<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/8815cd770955423c84e78a89dda111b2.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5oiR54ix5aSn6aOO5ZKM54OI6YWS,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p> 可通过Extra 是否是Using Index 判断查询是否索引覆盖</p>
+<p>如何实现索引覆盖: 将被查询的字段，建立到联合索引里去</p>
+<p>哪些场景适合使用索引覆盖来优化SQL</p>
+<ul>
+<li>全表count查询优化 </li>
+<li>列查询回表优化</li>
+<li>分页查询</li>
+</ul>
+<h3 id="在mysql中，float和double都是浮点数类型："><a href="#在mysql中，float和double都是浮点数类型：" class="headerlink" title="在mysql中，float和double都是浮点数类型："></a>在mysql中，float和double都是<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%B5%AE%E7%82%B9&spm=1001.2101.3001.7020">浮点</a>数类型：</h3><ul>
+<li>float 占4个字节，精度是6位；</li>
+<li>double 占8个字节，精度是16位；</li>
+</ul>
+<h3 id="MySQL主从复制原理"><a href="#MySQL主从复制原理" class="headerlink" title="MySQL主从复制原理"></a>MySQL主从复制原理</h3><p>MySQL的主从复制和MySQL的读写分离两者有必然的联系，首先要部署主从复制，只有主从复制完成了，才能在此基础上进行数据的读写分离</p>
+<h4 id="1）MySQL支持的复制类型"><a href="#1）MySQL支持的复制类型" class="headerlink" title="1）MySQL支持的复制类型"></a>1）MySQL支持的复制类型</h4><p>（1）基于语句的复制：在主服务器上执行的SQL语句，在从服务器上执行同样的语句。MySQL默认采用基于语句的复制，效率比较高。但是必须开启二进制日志功能；<br>（2）基于行的复制：把改变的内容复制过去，而不是把命令在从服务器上执行一遍；<br>（3）混合类型的复制：默认采用基于语句的复制，一旦发现基于语句无法精确复制时，就会采用基于行的复制；</p>
+<h4 id="2）复制的工作过程"><a href="#2）复制的工作过程" class="headerlink" title="2）复制的工作过程"></a>2）复制的工作过程</h4><p>MySQL复制的工作过程详细介绍：<br>1.在每个事务更新数据完成之前，Master在二进制日志记录这些变化。写入二进制日志完成后，Master通知存储引擎提交事务；<br>2.Slave将Master的Binary log（二进制日志）复制到其Relay log（中继日志）。首先Slave开始一个工作进程——I/O线程，I/O线程在Master上打开一个普通的连接，然后开始Binlog dump process（二进制日志转储过程）。Binlog dump process从Master的二进制日志中读取事件，如果已经跟上Master，它就会睡眠并等待Master产生新的事件。I/O线程将这些时间写入中继日志；<br>3.SQL slave thread（SQL从线程）处理该过程的最后一步。SQL线程从中继日志中读取事件，并重放其中的事件而更新Slave的数据，使其与Master中的数据一致，只要该线程与I/O线程保持一致，中继日志通常会位于OS的缓存中，所以中继日志的开销很小；</p>
+<p>复制过程有一个很重要的限制，即复制在Slave上是串行化的，也就是说Master上的并行更新操作不能在Slave上并行操作。<br><img src="https://img-blog.csdnimg.cn/1815452b819c404196c6736779e79ad7.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAU2FuZG3kuLZEZW1vbg==,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
+<h2 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a><a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E7%8A%B6%E6%80%81%E7%A0%81&spm=1001.2101.3001.7020">状态码</a></h2><h3 id="1、定义"><a href="#1、定义" class="headerlink" title="1、定义"></a>1、定义</h3><p>当用户在浏览网页的时候，浏览器会返回一个http状态码，主要是用来响应浏览器的请求。通常情况下，一般是3位数字，http状态码是由RFC 2616来定义的，所有的状态码的第一个数字就代表着是什么状态。</p>
+<h3 id="2、状态码的分类"><a href="#2、状态码的分类" class="headerlink" title="2、状态码的分类"></a>2、状态码的分类</h3><p>1xx<br>这一类型的状态码，代表请求已被接受，需要继续处理。这类响应是临时响应，只包含状态行和某些可选的响应头信息，并以空行结束。</p>
+<p>2xx<br>这一类型的状态码，代表请求已成功被服务器接收、理解、并接受。</p>
+<p>3xx<br>这类状态码代表需要客户端采取进一步的操作才能完成请求。通常，这些状态码用来重定向，后续的请求地址（重定向目标）在本次响应的 location 域中指明。</p>
+<p>4xx<br>这类的状态码代表了客户端看起来可能发生了错误，妨碍了服务器的处理。除非响应的是一个 HEAD 请求，否则服务器就应该返回一个解释当前错误状况的实体，以及这是临时的还是永久性的状况。这些状态码适用于任何请求方法。浏览器应当向用户显示任何包含在此类错误响应中的实体内容。</p>
+<p>5xx<br>这类状态码代表了服务器在处理请求的过程中有错误或者异常状态发生，也有可能是服务器意识到以当前的软硬件资源无法完成对请求的处理。除非这是一个HEAD 请求，否则服务器应当包含一个解释当前错误状态以及这个状况是临时的还是永久的解释信息实体。浏览器应当向用户展示任何在当前响应中被包含的实体。</p>
+<h3 id="3、http常用状态码有哪些"><a href="#3、http常用状态码有哪些" class="headerlink" title="3、http常用状态码有哪些"></a>3、http常用状态码有哪些</h3><p><strong>200</strong><br>HTTP 200 状态码表示请求成功，并且所发送的请求希望返回响应，如果在访问网站或者查看网站空间日志的时候，看到200则表示正常。</p>
+<p><strong>301</strong><br>HTTP 301 状态码可能对于运维人员并不是很陌生，一般网站在进行跳转的时候，会用到301，一般情况下，由于域名到期，或者域名不去续费，进行将资源进行转移到其他的网站上，301是一种永久的重定向。</p>
+<p><strong>302</strong><br>HTTP 302 状态码是HTTP协议中的一个状态码(Status Code)。可以简单的理解为该资源原本确实存在，但已经被临时改变了位置；换而言之，就是请求的资源暂时驻留在不同的URI下，故而除非特别指定了缓存头部指示，该状态码不可缓存。</p>
+<p><strong>304</strong><br>如果客户端发送了一个带条件的GET 请求且该请求已被允许，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，则服务器应当返回这个304状态码。简单的表达就是：服务端已经执行了GET，但文件未变化。</p>
+<p><strong>307</strong><br>307为临时重定向，如果重定向307的原请求不是get或者head方法，那么浏览器一定会自动的进行重定向，即便location有url，也应该忽略。</p>
+<p>状态码 307 与 302 之间的唯一区别在于，当发送重定向请求的时候，307 状态码可以确保请求方法和消息主体不会发生变化。当响应状态码为 302 的时候，一些旧有的用户代理会错误地将请求方法转换为 GET：使用非 GET 请求方法而返回 302 状态码，Web 应用的运行状况是不可预测的；而返回 307 状态码时则是可预测的。对于 GET 请求来说，两种情况没有区别。</p>
+<p><strong>308</strong><br>在HTTP协议中，308 Permanent Redirect(永久重定向)是表示重定向的响应状态码，说明请求的资源已经被永久的移动到了由Location首部指定的URL上。浏览器会进行重定向，同时搜索引擎也会更新其链接(用SEO的行话来说，意思是“链接汁”(linkjuice)被传递到了新的 URL)</p>
+<p><strong>400</strong><br>HTTP 400 状态码告诉客户端它发送了一条异常请求。400页面是当用户在打开网页时，返回给用户界面带有400提示符的页面。其含义是你访问的页面域名不存在或者请求错误。主要分为两种。</p>
+<p><strong>401</strong><br>请求要求身份验证。对于登录后请求的网页，服务器可能返回此响应。</p>
+<p><strong>403</strong><br>服务器拒绝请求。如果您在 Googlebot 尝试抓取您网站上的有效网页时看到此状态码（您可以在 Google 网站管理员工具诊断下的网络抓取页面上看到此信息），可能是您的服务器或主机拒绝了 Googlebot 访问。</p>
+<p><strong>404</strong> 状态码<br>当用户在访问网站的时候，可能会出现404页面，出现404页面的原因可能就是请求的资源不存在，页面可能被删除。</p>
+<p><strong>500</strong><br>HTTP 500 状态码也是最常见的一种状态码，相信很多程序员都遇到过，500表示是网站的服务器出现问题，但是不同的状态码代表服务器出现的问题不一样。</p>
+<p><strong>501</strong><br>服务器不具备完成请求的功能。例如，服务器无法识别请求方法时可能会返回此代码。</p>
+<p><strong>503</strong><br>服务器目前无法使用（由于超载或停机维护）。通常，这只是暂时状态。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%89%BE%E5%B7%A5%E4%BD%9C/" class="category-chain-item">找工作</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%9D%A2%E8%AF%95/">#面试</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>java面试知识点收集</div>
+      <div>http://slanris.top/post/906095e6.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Liu Bo</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年10月15日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2022年10月15日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/post/5c6b54bf.html" title="云计算课程实验">
+                        <span class="hidden-mobile">云计算课程实验</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    <!-- 你需要自行修改替换 `v2` 为你想要的版本号 -->
+<script src="https://unpkg.com/@waline/client@v2.13.0/dist/waline.js"></script>
+
+
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.6.3/waline.min.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.6.3/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://hexo.slanris.top/","path":"window.location.pathname","highlighter":true,"meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":6,"pageview":true},
+          {
+            el: '#waline',
+            path: window.location.pathname,
+            // reaction: true, // 开启反应
+            comment: true,
+            serverURL: 'https://hexo.slanris.top/'
+          }
+        )
+        Waline.init(options);
+        
+        wa_ccc = "waline-comment-count-container"
+        var i=document.getElementById(wa_ccc)
+        i.style.display = 'inline'
+
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://www.slanris.top" target="_blank" rel="nofollow noopener"><span>Slan</span></a> <i class="iconfont icon-love"></i> <a href="https://www.liu30k.top" target="_blank" rel="nofollow noopener"><span>LiuBo</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      鄂ICP备2022004385号-2
+    </a>
+  </span>
+  
+</div>
+
+  
+  
+
+  <div>
+    <span id="timeDate">载入天数...</span>
+    <span id="times">载入时分秒...</span>
+    <script>
+    var now = new Date();
+    function createtime(){
+        var grt= new Date("10/01/2022 00:00:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24;
+        dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum);
+        hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){
+            hnum = "0" + hnum;
+        }
+        minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes);
+        if(String(mnum).length ==1 ){
+                  mnum = "0" + mnum;
+        }
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds);
+        if(String(snum).length ==1 ){
+                  snum = "0" + snum;
+        }
+        document.getElementById("timeDate").innerHTML = "🚀 for&nbsp"+dnum+"&nbspdays";  //此次自定义显示内容
+        document.getElementById("times").innerHTML = hnum + "&nbsphr&nbsp" + mnum + "&nbspmin&nbsp" + snum + "&nbspsec";
+    }  //此次自定义显示内容
+    setInterval("createtime()",250);
+    </script>
+  </div>
+
+  <div class="text-center py-1">   
+    <div>
+      <span>Copyright © 2022-2023</span></a>
+      <a href="https://www.liu30k.top/" target="_blank" rel="nofollow noopener">
+       <span>by liubo-slanris</span></a>    <br>
+    </div>
+
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/love.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/DynamicRibbon.min.js"></script>
+<script src="/%3Cscript%20async%20src=%22https:/sucai.erhe.group/hexo&erhe/sbhuadong.js%22%3E%3C/script%3E.js"></script>
+<script src="/js/canvas-nest.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/snowflake.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script>
+<script src="/js/reping.js"></script>
+<script src="//unpkg.com/@waline/client@v2/dist/waline.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+  
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/nico.model.json"},"display":{"position":"left","width":200,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
