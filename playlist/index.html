@@ -16,15 +16,15 @@
   <meta name="author" content="Liu Bo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="热评     loading...     loading...">
+    <meta name="description" content="$.get(&quot;https:&#x2F;&#x2F;v1.hitokoto.cn?c&#x3D;d&amp;c&#x3D;h&amp;c&#x3D;j&quot;, function (data) {         if (data.hitokoto !&#x3D; null) {             $(&#39;#poem&#39;).html(data.hitokoto);             if (data.from_who !&#x3D; null) { $(&#39;#info&#39;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="playlist">
 <meta property="og:url" content="http://slanris.top/playlist/index.html">
 <meta property="og:site_name" content="liubo-Blog">
-<meta property="og:description" content="热评     loading...     loading...">
+<meta property="og:description" content="$.get(&quot;https:&#x2F;&#x2F;v1.hitokoto.cn?c&#x3D;d&amp;c&#x3D;h&amp;c&#x3D;j&quot;, function (data) {         if (data.hitokoto !&#x3D; null) {             $(&#39;#poem&#39;).html(data.hitokoto);             if (data.from_who !&#x3D; null) { $(&#39;#info&#39;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-10-09T17:27:33.000Z">
-<meta property="article:modified_time" content="2022-10-10T11:33:54.398Z">
+<meta property="article:modified_time" content="2022-10-15T09:49:29.219Z">
 <meta property="article:author" content="Liu Bo">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -205,7 +205,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/photos/">
+              <a class="nav-link" href="/gallery/">
                 <i class="iconfont icon-instagram-fill"></i>
                 相册
               </a>
@@ -281,6 +281,20 @@
 
 <article class="page-content">
   <!-- 加入网易云音乐热门评论，实时更新 -->
+<script type="text/javascript"src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $.get("https://v1.hitokoto.cn?c=d&c=h&c=j", function (data) {
+        if (data.hitokoto != null) {
+            $('#poem').html(data.hitokoto);
+            if (data.from_who != null) { $('#info').html(data.from_who + " · " + "《 " + data.from + " 》"); }
+            else { $('#info').html(" “ " + data.from + " ” "); }
+        }
+        else { $('#poem').html("获取出错啦"); }
+    });
+    
+</script>
+
+
 <div class="poem-wrap">
     <div class="poem-border poem-left">
     </div>
@@ -293,22 +307,60 @@
 
 
 
-    <div id="aplayer-VKLqZHlL" class="aplayer aplayer-tag-marker meting-tag-marker"
+
+    <div id="aplayer-RybGxpbx" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="8652359923" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#3F51B5"
     ></div>
 
 <!-- 
-    <div id="aplayer-BXcXunvd" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-urQaPuwY" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="https://y.qq.com/n/ryqq/playlist/8652359923" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="false" data-listmaxheight=" 340px" data-preload=" none" data-theme=" #ad7a86"
     ></div> -->
 
 <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1488285208&auto=1&height=66"></iframe> -->
 
 
-
-
-
   
+  <article id="comments" lazyload>
+    <!-- 你需要自行修改替换 `v2` 为你想要的版本号 -->
+<script src="https://unpkg.com/@waline/client@v2.13.0/dist/waline.js"></script>
+
+
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.6.3/waline.min.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.6.3/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://hexo.slanris.top/","path":"window.location.pathname","highlighter":true,"meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":6,"pageview":true},
+          {
+            el: '#waline',
+            path: window.location.pathname,
+            // reaction: true, // 开启反应
+            comment: true,
+            serverURL: 'https://hexo.slanris.top/'
+          }
+        )
+        Waline.init(options);
+        
+        wa_ccc = "waline-comment-count-container"
+        var i=document.getElementById(wa_ccc)
+        i.style.display = 'inline'
+
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+
+  </article>
+
 
 </article>
 
