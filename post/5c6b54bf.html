@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fi9.hexun.com%2F2021-06-02%2F203710720.jpg&refer=http%3A%2F%2Fi9.hexun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668365661&t=445fb5b9406f93d54a279c16f4d930ac">
 <meta property="article:published_time" content="2022-10-14T18:43:18.000Z">
-<meta property="article:modified_time" content="2022-10-14T18:54:32.660Z">
+<meta property="article:modified_time" content="2022-10-19T09:53:43.594Z">
 <meta property="article:author" content="Liu Bo">
 <meta property="article:tag" content="实验">
 <meta name="twitter:card" content="summary_large_image">
@@ -289,7 +289,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          866 字
+          6.5k 字
         
       </span>
     
@@ -300,7 +300,7 @@
         
         
         
-          8 分钟
+          55 分钟
         
       </span>
     
@@ -366,7 +366,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年10月15日 凌晨
+                    本文最后更新于：2022年10月19日 下午
                   
                 
               </p>
@@ -406,7 +406,7 @@
 <p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210150244400.png" srcset="/img/loading.gif" lazyload alt="image-20221006231752451"></p>
 <p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210150244734.png" srcset="/img/loading.gif" lazyload alt="image-20221006231804027"></p>
 <p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210150244517.png" srcset="/img/loading.gif" lazyload alt="image-20221006231815424"></p>
-<h1 id="Hadoop集群搭建"><a href="#Hadoop集群搭建" class="headerlink" title="Hadoop集群搭建"></a>Hadoop集群搭建</h1><p>将Hadoop压缩包上传到Centos7中指定目录 </p>
+<h1 id="Hadoop集群搭建"><a href="#Hadoop集群搭建" class="headerlink" title="Hadoop集群搭建"></a>Hadoop集群搭建</h1><h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><p>将Hadoop压缩包上传到Centos7中指定目录 <strong>（三台主机进行同样的操作）</strong></p>
 <p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210150244638.png" srcset="/img/loading.gif" lazyload alt="image-20221006234103045"></p>
 <p>目录结果如下</p>
 <p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210150244553.png" srcset="/img/loading.gif" lazyload alt="image-20221006234125916"></p>
@@ -417,10 +417,110 @@
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">vim core-site.<span class="hljs-keyword">xml</span> <span class="hljs-title"></span><br></code></pre></td></tr></table></figure>
 
 <p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210150244754.png" srcset="/img/loading.gif" lazyload alt="image-20221006234644816"></p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">vim</span> hdfs-site.xml<br></code></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>fs.defaultFS<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>hdfs://node1:9000<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>hadoop.tmp.dir<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>/opt/hadoop/tmp<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210150244096.png" srcset="/img/loading.gif" lazyload alt="image-20221006235601959"></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">vim hdfs-site.xml<br></code></pre></td></tr></table></figure>
 
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191429626.png" srcset="/img/loading.gif" lazyload alt="image-20221019142944382"></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br><br> <span class="hljs-comment">&lt;!-- 设置namenode的http通讯地址 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.namenode.secondary.http-address<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>node1:50090<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br>    <br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>    	<span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.namenode.http-address<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>    	<span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>node1:9870<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br>    <br>    <span class="hljs-comment">&lt;!-- 设置hdfs副本数量 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.replication<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br>     <span class="hljs-comment">&lt;!-- 设置namenode存放的路径 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.namenode.name.dir<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>file:/opt/hadoop/hdfs/name<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br>     <span class="hljs-comment">&lt;!-- 设置datanode存放的路径 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>dfs.datanode.data.dir<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>file:/opt/hadoop/hdfs/data<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意这里的路径（设置datanode存放的路径）要根据自己的Hadoop存放路径修改</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">vim mapred-site.xml<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191432163.png" srcset="/img/loading.gif" lazyload alt="image-20221019143220068"></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 通知框架MR使用YARN --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>mapreduce.framework.name<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>yarn<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>mapreduce.jobhistory.address<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>node1:10020<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>mapreduce.jobhistory.webapp.address<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>node1:19888<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">vim</span> yarn-site.xml<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191433071.png" srcset="/img/loading.gif" lazyload alt="image-20221019143319118"></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- Site specific YARN configuration properties --&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.resourcemanager.hostname<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>node1<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br>     <span class="hljs-comment">&lt;!-- reducer取数据的方式是mapreduce_shuffle --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>mapreduce_shuffle<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
+
+<p>启动HDFS</p>
+<p>进入Hadoop的bin目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./hdfs namenode -format<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191440719.png" srcset="/img/loading.gif" lazyload alt="image-20221019144028819"></p>
+<p>格式化：hdfs namenode -format</p>
+<p>格式化后会在配置的目录(/opt/hadoop)下生成fsimage 文件</p>
+<p>在node1中Hadoop的sbin目录下，统一启动HDFS</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./start-dfs.sh<br></code></pre></td></tr></table></figure>
+
+<p>启动Hadoop集群</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">start</span>-<span class="hljs-keyword">all</span>.sh<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191443538.png" srcset="/img/loading.gif" lazyload alt="image-20221019144358247"></p>
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191444115.png" srcset="/img/loading.gif" lazyload alt="image-20221019144419125"></p>
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191444301.png" srcset="/img/loading.gif" lazyload alt="image-20221019144430506"></p>
+<p><strong>使用jps命令，node1节点出现namenode，node2，node3出现DataNode即为成功</strong> </p>
+<p>浏览器访问网址<a href="http://47.103.211.88:9870，IP和端口根据自己的而定">http://47.103.211.88:9870，IP和端口根据自己的而定</a></p>
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191448093.png" srcset="/img/loading.gif" lazyload alt="image-20221019144836004"></p>
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191449083.png" srcset="/img/loading.gif" lazyload alt="image-20221019144859233"></p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>启动NameNode时报错</p>
+<figure class="highlight profile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs profile"><span class="hljs-number">2022</span><span class="hljs-number">-10</span><span class="hljs-number">-19</span> <span class="hljs-number">14</span>:<span class="hljs-number">19</span>:<span class="hljs-number">21</span>,<span class="hljs-number">198</span> INFO org.apache.hadoop.http.HttpServer2: addJerseyResourcePackage: packageName=org.apache.hadoop.hdfs.server.namenode.web.resources;org.apache.hadoop.hdfs.web.resources, pathSpec=/webhdfs/v1/*<br>2022-10-19 14:<span class="hljs-number">19</span>:<span class="hljs-number">21</span>,<span class="hljs-number">217</span> INFO org.apache.hadoop.http.HttpServer2: HttpServer.start() threw a non Bind IOException<br>java.net.BindException: Port in use: node1:<span class="hljs-number">9870</span><br>	at org.apache.hadoop.http.HttpServer2.openListeners(HttpServer2.java:<span class="hljs-number">892</span>)<br>	at org.apache.hadoop.http.HttpServer2.start(HttpServer2.java:<span class="hljs-number">828</span>)<br>	at org.apache.hadoop.hdfs.server.namenode.NameNodeHttpServer.start(NameNodeHttpServer.java:<span class="hljs-number">142</span>)<br>	at org.apache.hadoop.hdfs.server.namenode.NameNode.startHttpServer(NameNode.java:<span class="hljs-number">706</span>)<br>	at org.apache.hadoop.hdfs.server.namenode.NameNode.initialize(NameNode.java:<span class="hljs-number">593</span>)<br>	at org.apache.hadoop.hdfs.server.namenode.NameNode.&lt;init&gt;(NameNode.java:<span class="hljs-number">765</span>)<br>	at org.apache.hadoop.hdfs.server.namenode.NameNode.&lt;init&gt;(NameNode.java:<span class="hljs-number">749</span>)<br>	at org.apache.hadoop.hdfs.server.namenode.NameNode.createNameNode(NameNode.java:<span class="hljs-number">1446</span>)<br>	at org.apache.hadoop.hdfs.server.namenode.NameNode.main(NameNode.java:<span class="hljs-number">1512</span>)<br>Caused by: java.net.BindException: Cannot assign requested address<br>	at sun.nio.ch.Net.bind0(Native Method)<br>	at sun.nio.ch.Net.bind(Net.java:<span class="hljs-number">433</span>)<br>	at sun.nio.ch.Net.bind(Net.java:<span class="hljs-number">425</span>)<br>	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:<span class="hljs-number">223</span>)<br>	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:<span class="hljs-number">74</span>)<br>	at org.mortbay.jetty.nio.SelectChannelConnector.open(SelectChannelConnector.java:<span class="hljs-number">216</span>)<br>	at org.apache.hadoop.http.HttpServer2.openListeners(HttpServer2.java:<span class="hljs-number">887</span>)<br>	... <span class="hljs-number">8</span> more<br></code></pre></td></tr></table></figure>
+
+<p>解决方式：将公网NameNode的公网IP改成内网IP</p>
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191454256.png" srcset="/img/loading.gif" lazyload alt="image-20221019145407113"></p>
+<blockquote>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhangvalue/article/details/80883788?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166615978116782412521794%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=166615978116782412521794&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-3-80883788-null-null.142%5Ev59%5Epc_search_tree,201%5Ev3%5Econtrol_1&utm_term=Hadoop%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99java.net.BindException:%20Cannot%20assign%20requested%20address&spm=1018.2226.3001.4187">参考链接</a></h2></blockquote>
+<h1 id="zookeeper集群搭建"><a href="#zookeeper集群搭建" class="headerlink" title="zookeeper集群搭建"></a>zookeeper集群搭建</h1><h1 id="Hbase集群搭建"><a href="#Hbase集群搭建" class="headerlink" title="Hbase集群搭建"></a>Hbase集群搭建</h1><p>上传hbase压缩包到指定目录并解压，目录结构如下</p>
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191500912.png" srcset="/img/loading.gif" lazyload alt="image-20221019150041477"></p>
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191501427.png" srcset="/img/loading.gif" lazyload alt="image-20221019150116354"></p>
+<p>配置环境变量</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">vim <span class="hljs-regexp">/etc/</span>profile<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191502937.png" srcset="/img/loading.gif" lazyload alt="image-20221019150236593"></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment">#hbase   </span><br>export HBASE_HOME=<span class="hljs-regexp">/opt/</span>hbase<span class="hljs-regexp">/hbase-1.1.3  /</span>**根据自己目录配置*/<br>export PATH=<span class="hljs-variable">$PATH</span>:<span class="hljs-variable">$HBase_HOME</span>/bin<br></code></pre></td></tr></table></figure>
+
+<p>配置conf目录下的hbase-env.sh文件</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim"><span class="hljs-keyword">vim</span> base-env.<span class="hljs-keyword">sh</span><br></code></pre></td></tr></table></figure>
+
+<p>找到JAVA_HOME，去掉注释，修改为实际的JAVA_HOME路径</p>
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191506158.png" srcset="/img/loading.gif" lazyload alt="image-20221019150628190"></p>
+<p>设置不使用内置zookeeper，在非编辑状态下输入/HBASE_MANA进行搜索，将</p>
+<p># export HBASE_MANAGES_ZK=true中去掉注释，并将true改为false：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-built_in">export</span> <span class="hljs-attribute">HBASE_MANAGES_ZK</span>=<span class="hljs-literal">false</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191507084.png" srcset="/img/loading.gif" lazyload alt="image-20221019150717175"></p>
+<p>编辑hbase-site.xml文件</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">vim</span> hbase-site.xml<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191510409.png" srcset="/img/loading.gif" lazyload alt="image-20221019151039237"></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br>	<span class="hljs-comment">&lt;!-- 指定hbase在HDFS上存储的路径 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>hbase.rootdir<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>hdfs://node1:9000/hbase<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span> #hadoop配置文件core-site.xml中配置<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>hbase.cluster.distributed<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>hbase.zookeeper.quorum<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>#zookeeper节点配置<br>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>node1,node2,node3<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>hbase.node1.maxclockskew<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>2700000<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span> #先设置小一点，如果报错再调大点<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>hbase.tmp.dir<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>/opt/hbase/data/temp<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>可以看下core-site.xml中内容</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">cat <span class="hljs-regexp">/opt/</span>hadoop<span class="hljs-regexp">/hadoop-2.6.5/</span>etc<span class="hljs-regexp">/hadoop/</span>core-site.xml<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191513650.png" srcset="/img/loading.gif" lazyload alt="image-20221019151314522"></p>
+<p><strong>新建一个HDFS****的文件夹</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hadoop fs -<span class="hljs-built_in">mkdir</span> /hbase<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191515032.png" srcset="/img/loading.gif" lazyload alt="image-20221019151503759"></p>
+<p>将hadoop中hdfs-site.xml拷贝到HBASE_HOME/conf下</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">scp <span class="hljs-regexp">/opt/</span>hadoop<span class="hljs-regexp">/hadoop-2.6.5/</span>etc<span class="hljs-regexp">/hadoop/</span>hdfs-site.xml <span class="hljs-regexp">/opt/</span>hbase<span class="hljs-regexp">/hbase-1.1.3/</span>conf/<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191522950.png" srcset="/img/loading.gif" lazyload alt="image-20221019152233977"></p>
+<p>配置conf目录下的regionservers</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">vi regionservers</span><br></code></pre></td></tr></table></figure>
+
+<p>将local host改为node2，node3</p>
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191525203.png" srcset="/img/loading.gif" lazyload alt="image-20221019152542226"></p>
+<p>为保证集群的可靠性，要启动多个HNode1</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">./hbase-daemon.sh start node1<br></code></pre></td></tr></table></figure>
+
+<p>前提：hadoop集群已启动，如果没启动，请依次启动。<br>启动所有的hbase</p>
+<p> <strong>需要在安装了zk****的每台节点上启动</strong>zk</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">zkServer.sh <span class="hljs-literal">start</span> <br></code></pre></td></tr></table></figure>
+
+<p> 进入bin目录 启动hbase集群，启动hbase，在node1主节点上运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">./start-dfs.sh<br><br>./start-yarn.sh<br></code></pre></td></tr></table></figure>
+
+<p>使用jps查看是否正常启动</p>
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191717660.png" srcset="/img/loading.gif" lazyload alt="image-20221019171738424"></p>
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191717118.png" srcset="/img/loading.gif" lazyload alt="image-20221019171758091"></p>
+<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210191718886.png" srcset="/img/loading.gif" lazyload alt="image-20221019171826534"></p>
+<h1 id="Flume的安装与部署"><a href="#Flume的安装与部署" class="headerlink" title="Flume的安装与部署"></a>Flume的安装与部署</h1><h1 id="Storm集群搭建"><a href="#Storm集群搭建" class="headerlink" title="Storm集群搭建"></a>Storm集群搭建</h1>
                 
               </div>
             
@@ -484,7 +584,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年10月15日</div>
+          <div>2022年10月19日</div>
         </div>
       
       
