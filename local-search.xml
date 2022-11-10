@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>NoteExpress的安装和使用</title>
+    <link href="/post/a61aa9d1.html"/>
+    <url>/post/a61aa9d1.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="NoteExpress的安装步骤以及插入参考文献"><a href="#NoteExpress的安装步骤以及插入参考文献" class="headerlink" title="NoteExpress的安装步骤以及插入参考文献"></a>NoteExpress的安装步骤以及插入参考文献</h1><h2 id="1-下载安装"><a href="#1-下载安装" class="headerlink" title="1 下载安装"></a>1 下载安装</h2><p>官网下载：<a href="http://www.inoteexpress.com/aegean/">http://www.inoteexpress.com/aegean/</a></p><p>直接点击链接也可下载：<a href="https://file-1310995062.cos.ap-nanjing.myqcloud.com/NoteExpress_3.7.0.9296_zh.exe">NoteExpress3.7</a></p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211102139058.png" alt="image-20221110213946764"></p><p><strong>右键选择“以管理员身份运行”</strong>并安装！</p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211102130694.png" alt="image-20221110213058237"></p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211102138042.png" alt="image-20221110213804934"></p><h2 id="2-安装Google浏览器插件NoteExpress网络捕手"><a href="#2-安装Google浏览器插件NoteExpress网络捕手" class="headerlink" title="2 安装Google浏览器插件NoteExpress网络捕手"></a>2 安装Google浏览器插件<strong>NoteExpress网络捕手</strong></h2><p>点击链接下载插件：<a href="https://file-1310995062.cos.ap-nanjing.myqcloud.com/ljbhddngkkppbbkknjldoikonnolgafd_1.1.4_chrome.zzzmh.cn.crx">NoteExpress网络捕手</a></p><p>打开开发者模式</p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211102204776.png" alt="image-20221110220407625"></p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211102204987.png" alt="image-20221110220424601"></p><p>直接将插件拖入拓展程序中</p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211102205856.png" alt="image-20221110220540736"></p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211102206999.png" alt="image-20221110220602902"></p><p>插件的使用</p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211102210217.png" alt="image-20221110221007693"></p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211102209504.png" alt="image-20221110220929527"></p><h2 id="3-加入插件到Word（此步骤可以省略）"><a href="#3-加入插件到Word（此步骤可以省略）" class="headerlink" title="3 加入插件到Word（此步骤可以省略）"></a>3 加入插件到Word<strong>（此步骤可以省略）</strong></h2><p>打开NoteExpress安装插件</p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211102052291.png" alt="image-20221110205225088"></p><p>打开Word</p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211102053871.png" alt="image-20221110205309640"></p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211102053697.png" alt="image-20221110205340653"></p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211102054813.png" alt="image-20221110205359509"></p><p>没有此选项需要自己添加.dll文件！</p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211102054832.png" alt="image-20221110205448582"></p><p>注意这里不能将其禁用</p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211102055605.png" alt="image-20221110205536598"></p><p>若禁用了需要解除禁用即可</p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211102056566.png" alt="image-20221110205633396"></p><p>最后的效果</p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211102147748.png" alt="image-20221110214725509"></p><h2 id="4-NoteExpress插入参考文献并修改格式"><a href="#4-NoteExpress插入参考文献并修改格式" class="headerlink" title="4 NoteExpress插入参考文献并修改格式"></a>4 NoteExpress插入参考文献并修改格式</h2><p>NoteExpress中导入文献的几种方法：</p><h3 id="（1）直接导入期刊论文"><a href="#（1）直接导入期刊论文" class="headerlink" title="（1）直接导入期刊论文"></a>（1）直接导入期刊论文</h3><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211110103194.png" alt="image-20221111010303284"></p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211110104239.png" alt="image-20221111010418853"></p><h3 id="（2）通过上述插件导入"><a href="#（2）通过上述插件导入" class="headerlink" title="（2）通过上述插件导入"></a>（2）通过上述插件导入</h3><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211110107921.png" alt="image-20221111010639418"></p><h3 id="（3）通过批量导出NoteExpress格式文件导入"><a href="#（3）通过批量导出NoteExpress格式文件导入" class="headerlink" title="（3）通过批量导出NoteExpress格式文件导入"></a>（3）通过批量导出NoteExpress格式文件导入</h3><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211110108610.png" alt="image-20221111010756175"></p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211110108578.png" alt="image-20221111010852499"></p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211110110992.png" alt="image-20221111011005389"></p><h2 id="5-word中插入引用"><a href="#5-word中插入引用" class="headerlink" title="5 word中插入引用"></a>5 word中插入引用</h2><p>先在NoteExpress中选中要插入的文献</p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211110112431.png" alt="image-20221111011245098"></p><p>在word中点击插入引用</p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211110113870.png" alt="image-20221111011344566"></p><p>效果</p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211110114931.png" alt="image-20221111011404838"></p><p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202211110114344.png" alt="image-20221111011414861"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>软件</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>软件</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Oracle数据库安装</title>
     <link href="/post/e335937b.html"/>
     <url>/post/e335937b.html</url>
