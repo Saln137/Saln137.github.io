@@ -292,7 +292,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.6k 字
+          5.7k 字
         
       </span>
     
@@ -303,7 +303,7 @@
         
         
         
-          47 分钟
+          48 分钟
         
       </span>
     
@@ -377,7 +377,7 @@
             
               <div class="markdown-body">
                 
-                <figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs arcade"><span class="hljs-built_in">console</span><br><br></code></pre></td></tr></table></figure>
+                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs arcade"><span class="hljs-built_in">console</span><br><br></code></pre></td></tr></table></figure>
 
 <h1 id="1-Docker中文件挂载启动命令"><a href="#1-Docker中文件挂载启动命令" class="headerlink" title="1.Docker中文件挂载启动命令"></a>1.Docker中文件挂载启动命令</h1><h2 id="1-1挂载方式1—-数据卷挂载"><a href="#1-1挂载方式1—-数据卷挂载" class="headerlink" title="1.1挂载方式1—-数据卷挂载"></a>1.1挂载方式1—-数据卷挂载</h2><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs livescript">docker run <span class="hljs-string">\</span><br>  --name nginx <span class="hljs-string">\</span><br>  -v html:/root/html <span class="hljs-string">\</span><br>  -p <span class="hljs-number">8081</span>:<span class="hljs-number">80</span><span class="hljs-string">\</span><br>  nginx <br></code></pre></td></tr></table></figure>
 
@@ -399,7 +399,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 安装</span><br>curl -L https://github.com/docker/compose/releases/download/1.23.1/docker-compose-`<span class="hljs-built_in">uname</span> -s`-`<span class="hljs-built_in">uname</span> -m` &gt; /usr/local/bin/docker-compose<br></code></pre></td></tr></table></figure>
 
 <p>如果下载速度较慢，或者下载失败，可以使用课前资料提供的docker-compose文件：</p>
-<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210082209501.png" srcset="/img/loading.gif" lazyload alt="image-20210417133020614"></p>
+<p><a target="_blank" rel="noopener" href="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210082209501.png" title="image-20210417133020614" class="gallery-item"><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210082209501.png" srcset="/img/loading.gif" lazyload alt="image-20210417133020614"></a></p>
 <p>上传到<code>/usr/local/bin/</code>目录也可以。</p>
 <h2 id="3-2-修改文件权限"><a href="#3-2-修改文件权限" class="headerlink" title="3.2.修改文件权限"></a>3.2.修改文件权限</h2><p>修改文件权限：</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 修改权限</span><br><span class="hljs-built_in">chmod</span> +x /usr/local/bin/docker-compose<br></code></pre></td></tr></table></figure>
@@ -493,7 +493,7 @@
 <li><p>查看ip（docker内部局域网的ip）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cat</span> /etc/hosts<br></code></pre></td></tr></table></figure>
 
-<p>我们将看到下面的内容：<br><img src="https://img-blog.csdnimg.cn/20200925134424472.png#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></p>
+<p>我们将看到下面的内容：<br><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20200925134424472.png#pic_center" title="在这里插入图片描述" class="gallery-item"><img src="https://img-blog.csdnimg.cn/20200925134424472.png#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></a></p>
 <p>我们可以知道es容器在docker中的ip是<code>172.17.0.3</code></p>
 </li>
 <li><p>接下来就可以根据这个ip来创建容器啦</p>
@@ -507,9 +507,9 @@
 
 <p>说明plugins目录被挂载到了：<code>/var/lib/docker/volumes/es-plugins/_data </code>这个目录中。</p>
 <h3 id="2）解压缩分词器安装包"><a href="#2）解压缩分词器安装包" class="headerlink" title="2）解压缩分词器安装包"></a>2）解压缩分词器安装包</h3><p>下面我们需要把课前资料中的ik分词器解压缩，重命名为ik</p>
-<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210082210463.png" srcset="/img/loading.gif" lazyload alt="image-20210506110249144"></p>
+<p><a target="_blank" rel="noopener" href="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210082210463.png" title="image-20210506110249144" class="gallery-item"><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210082210463.png" srcset="/img/loading.gif" lazyload alt="image-20210506110249144"></a></p>
 <h3 id="3）上传到es容器的插件数据卷中"><a href="#3）上传到es容器的插件数据卷中" class="headerlink" title="3）上传到es容器的插件数据卷中"></a>3）上传到es容器的插件数据卷中</h3><p>也就是<code>/var/lib/docker/volumes/es-plugins/_data </code>：</p>
-<p><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210082210064.png" srcset="/img/loading.gif" lazyload alt="image-20210506110704293"></p>
+<p><a target="_blank" rel="noopener" href="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210082210064.png" title="image-20210506110704293" class="gallery-item"><img src="https://blog-1310995062.cos.ap-chongqing.myqcloud.com/images202210082210064.png" srcset="/img/loading.gif" lazyload alt="image-20210506110704293"></a></p>
 <h3 id="4）重启容器"><a href="#4）重启容器" class="headerlink" title="4）重启容器"></a>4）重启容器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">4、重启容器</span><br>docker restart es<br></code></pre></td></tr></table></figure>
 
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 查看es日志</span><br>docker logs -f es<br></code></pre></td></tr></table></figure>
@@ -524,14 +524,14 @@
 <h2 id="7-4问题解决-—-gt-分词器没有挂在到plugins目录下"><a href="#7-4问题解决-—-gt-分词器没有挂在到plugins目录下" class="headerlink" title="7.4问题解决 —-&gt;分词器没有挂在到plugins目录下"></a>7.4问题解决 —-&gt;分词器没有挂在到plugins目录下</h2><p>\5. 进入<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=docker&spm=1001.2101.3001.7020">docker</a> 安装elasticSearch 的容器 查看plugins</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">exec</span> -it elasticsearch /bin/bash<br><span class="hljs-built_in">cd</span> plugins <br></code></pre></td></tr></table></figure>
 
-<p><img src="https://img-blog.csdnimg.cn/20201114111732680.png#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>6.查看当前的路径</p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20201114111732680.png#pic_center" title="在这里插入图片描述" class="gallery-item"><img src="https://img-blog.csdnimg.cn/20201114111732680.png#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></a><br>6.查看当前的路径</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">pwd</span><br></code></pre></td></tr></table></figure>
 
-<p><img src="https://img-blog.csdnimg.cn/20201114111914484.png#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>7.回到解压ik<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%88%86%E8%AF%8D&spm=1001.2101.3001.7020">分词</a>器的目录，copy到容器中</p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20201114111914484.png#pic_center" title="在这里插入图片描述" class="gallery-item"><img src="https://img-blog.csdnimg.cn/20201114111914484.png#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></a><br>7.回到解压ik<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%88%86%E8%AF%8D&spm=1001.2101.3001.7020">分词</a>器的目录，copy到容器中</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker <span class="hljs-built_in">cp</span> ik elasticsearch:/usr/share/elasticsearch/plugins<br>参数说明；elasticsearch docker容器名称<br>		/usr/share/elasticsearch/plugins 容器所在的位置<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://img-blog.csdnimg.cn/20201114112021510.png#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>\8. 查看plugins 是否成功</p>
-<p><img src="https://img-blog.csdnimg.cn/20201114112239518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMDQ5MzEw,size_16,color_FFFFFF,t_70#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"><br>9.重起elasticSearch 容器</p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20201114112021510.png#pic_center" title="在这里插入图片描述" class="gallery-item"><img src="https://img-blog.csdnimg.cn/20201114112021510.png#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></a><br>\8. 查看plugins 是否成功</p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20201114112239518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMDQ5MzEw,size_16,color_FFFFFF,t_70#pic_center" title="在这里插入图片描述" class="gallery-item"><img src="https://img-blog.csdnimg.cn/20201114112239518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMDQ5MzEw,size_16,color_FFFFFF,t_70#pic_center" srcset="/img/loading.gif" lazyload alt="在这里插入图片描述"></a><br>9.重起elasticSearch 容器</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker restart elasticseacher<br></code></pre></td></tr></table></figure>
 
 <h3 id="在线安装"><a href="#在线安装" class="headerlink" title="在线安装"></a>在线安装</h3><p>进入容器</p>
@@ -542,12 +542,17 @@
 
 
 
-<p><img src="https://img-blog.csdnimg.cn/img_convert/316924125878132d289dc7ea3bf99b70.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/img_convert/316924125878132d289dc7ea3bf99b70.png" title="img" class="gallery-item"><img src="https://img-blog.csdnimg.cn/img_convert/316924125878132d289dc7ea3bf99b70.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
 <p>进入plugins可以看到IK分词器已经安装成功</p>
-<p><img src="https://img-blog.csdnimg.cn/img_convert/241af36b392cf1a09e169c5e45b5b600.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/img_convert/241af36b392cf1a09e169c5e45b5b600.png" title="img" class="gallery-item"><img src="https://img-blog.csdnimg.cn/img_convert/241af36b392cf1a09e169c5e45b5b600.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
 <h3 id="安装拼音分词插件"><a href="#安装拼音分词插件" class="headerlink" title="安装拼音分词插件"></a>安装拼音分词插件</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">.<span class="hljs-regexp">/bin/</span>elasticsearch-plugin install https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/medcl/</span>elasticsearch-analysis-pinyin<span class="hljs-regexp">/releases/</span>download<span class="hljs-regexp">/v8.4.1/</span>elasticsearch-analysis-pinyin-<span class="hljs-number">8.4</span>.<span class="hljs-number">1</span>.zip<br></code></pre></td></tr></table></figure>
 
-
+</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
                 
               </div>
             

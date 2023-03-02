@@ -283,7 +283,7 @@
                 
 
 <article class="page-content">
-  <!-- 加入网易云音乐热门评论，实时更新 -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><!-- 加入网易云音乐热门评论，实时更新 -->
 <script type="text/javascript"src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script>
     $.get("https://v1.hitokoto.cn?c=d&c=h&c=j", function (data) {
@@ -311,17 +311,22 @@
 
 
 
-    <div id="aplayer-BuiWfThr" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-nDszDZFJ" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="8652359923" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#3F51B5"
     ></div>
 
 <!-- 
-    <div id="aplayer-HvXcblzk" class="aplayer aplayer-tag-marker meting-tag-marker"
+    <div id="aplayer-FZGYgRXE" class="aplayer aplayer-tag-marker meting-tag-marker"
          data-id="https://y.qq.com/n/ryqq/playlist/8652359923" data-server="netease" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="false" data-listmaxheight=" 340px" data-preload=" none" data-theme=" #ad7a86"
     ></div> -->
 
 <!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1488285208&auto=1&height=66"></iframe> -->
-
+</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
 
   
   <article id="comments" lazyload>

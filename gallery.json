@@ -1,1 +1,6 @@
-[{"name":"school","cover":"https://i.loli.net/2020/10/05/kBcvAf7INgMLaem.jpg","date":"2017-10","description":"school","url_name":"school","album":[{"img_url":"https://i.loli.net/2020/10/05/qtOevHpw5XImS1J.jpg","title":"school","describe":"school"},{"img_url":"https://i.loli.net/2020/10/05/4acvniMKTx8euqp.jpg","title":"school","describe":"school"},{"img_url":"https://i.loli.net/2020/10/05/4acvniMKTx8euqp.jpg","title":"school","describe":"school"}]}]
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery">[{"name":"school","cover":"https://i.loli.net/2020/10/05/kBcvAf7INgMLaem.jpg","date":"2017-10","description":"school","url_name":"school","album":[{"img_url":"https://i.loli.net/2020/10/05/qtOevHpw5XImS1J.jpg","title":"school","describe":"school"},{"img_url":"https://i.loli.net/2020/10/05/4acvniMKTx8euqp.jpg","title":"school","describe":"school"},{"img_url":"https://i.loli.net/2020/10/05/4acvniMKTx8euqp.jpg","title":"school","describe":"school"}]}]</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>

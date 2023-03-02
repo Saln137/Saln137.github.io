@@ -283,7 +283,7 @@
                 
 
 <article class="page-content">
-  <style type="text/css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><style type="text/css">
     .posts-expand .post-body img{
         padding: 1px;
     }
@@ -587,7 +587,7 @@ for (var i = 0; i < content.length; i++) {
             var con=content[i][j].url;
         var item=document.createElement("li");
         if(con.substring(0,con.length-4) != "封面"){
-            item.innerHTML="<div class=imgbox id=imgbox style=height:"+wid+"px;><img class=imgitem src=https://gallery-1310995062.cos.ap-nanjing.myqcloud.com/" + title + con +" alt=" + con + "></div><span>" + con.substring(0,con.length-4);
+            item.innerHTML="<div class=imgbox id=imgbox style=height:"+wid+"px;><a title=" + con + " class="gallery-item"><img class=imgitem src=https://gallery-1310995062.cos.ap-nanjing.myqcloud.com/" + title + con +" alt=" + con + "></a></div><span>" + con.substring(0,con.length-4);
             conBox.appendChild(item);
         }
     }
@@ -613,7 +613,7 @@ function moreClick(obj,cur,cont,title){
     for ( ; j < cont.length && j < Number(showNum) + Number(begin); j++) {
         var con=cont[j].url;
         var item=document.createElement("li");
-        item.innerHTML="<div class=imgbox id=imgbox style=height:"+wid+"px;><img class=imgitem src=https://gallery-1310995062.cos.ap-nanjing.myqcloud.com/"+title+con+" alt="+con+"></div><span>"+con.substring(0,con.length-4);
+        item.innerHTML="<div class=imgbox id=imgbox style=height:"+wid+"px;><a title="+con+" class="gallery-item"><img class=imgitem src=https://gallery-1310995062.cos.ap-nanjing.myqcloud.com/"+title+con+" alt="+con+"></a></div><span>"+con.substring(0,con.length-4);
         parent.appendChild(item);
         var v=item.getElementsByTagName('img');
         v[0].id=imgid;
@@ -624,7 +624,12 @@ function moreClick(obj,cur,cont,title){
         parent.appendChild(obj);
     }
 }
-</script>
+</script></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
 
   
 

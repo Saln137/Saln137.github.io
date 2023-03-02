@@ -291,7 +291,7 @@
                 
 
 <article class="page-content">
-  <style>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><style>
 .ImageGrid {
   width: 100%;
   max-width: 1040px;
@@ -317,7 +317,12 @@
 </style>
 
 <div id="imageTab"></div>
-<div class="ImageGrid"></div>
+<div class="ImageGrid"></div></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
 
   
 

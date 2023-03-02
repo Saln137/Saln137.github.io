@@ -1,1 +1,6 @@
-[{"name":"家乡美景","children":["1440.1080 IMG_20200726_191527.jpg"]},{"name":"校园风景","children":["3280.2464 IMG_20211018_174208.jpg","4640.3472 IMG_20211109_070843.jpg"]},{"name":"美好生活","children":["2396.1080 IMG_20201216_193226.jpg"]}]
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery">[{"name":"家乡美景","children":["1440.1080 IMG_20200726_191527.jpg"]},{"name":"校园风景","children":["3280.2464 IMG_20211018_174208.jpg","4640.3472 IMG_20211109_070843.jpg"]},{"name":"美好生活","children":["2396.1080 IMG_20201216_193226.jpg"]}]</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
